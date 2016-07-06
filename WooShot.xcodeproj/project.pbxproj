@@ -1,0 +1,392 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B36CE49C9F4FB9D13E147DA3 /* Pods_WooShot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02683531865C56589A458F00 /* Pods_WooShot.framework */; };
+		F67027BC1D2DA82600F7C95A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F67027BB1D2DA82600F7C95A /* GoogleService-Info.plist */; };
+		F6F060F71D2DA1E400063049 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F060F61D2DA1E400063049 /* AppDelegate.swift */; };
+		F6F060F91D2DA1E400063049 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F060F81D2DA1E400063049 /* ViewController.swift */; };
+		F6F060FC1D2DA1E400063049 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6F060FA1D2DA1E400063049 /* Main.storyboard */; };
+		F6F060FE1D2DA1E400063049 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6F060FD1D2DA1E400063049 /* Assets.xcassets */; };
+		F6F061011D2DA1E400063049 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6F060FF1D2DA1E400063049 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		02683531865C56589A458F00 /* Pods_WooShot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WooShot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E97E16EADE3498A741F58F96 /* Pods-WooShot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WooShot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WooShot/Pods-WooShot.debug.xcconfig"; sourceTree = "<group>"; };
+		F19F007DA31C8D87D8629893 /* Pods-WooShot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WooShot.release.xcconfig"; path = "Pods/Target Support Files/Pods-WooShot/Pods-WooShot.release.xcconfig"; sourceTree = "<group>"; };
+		F67027BB1D2DA82600F7C95A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F6F060F31D2DA1E400063049 /* WooShot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WooShot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6F060F61D2DA1E400063049 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F6F060F81D2DA1E400063049 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F6F060FB1D2DA1E400063049 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F6F060FD1D2DA1E400063049 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F6F061001D2DA1E400063049 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F6F061021D2DA1E400063049 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F6F060F01D2DA1E400063049 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B36CE49C9F4FB9D13E147DA3 /* Pods_WooShot.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		45969CE0FC80E558DEB3491B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				02683531865C56589A458F00 /* Pods_WooShot.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6A7C618AA9A355DBCE45CB40 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E97E16EADE3498A741F58F96 /* Pods-WooShot.debug.xcconfig */,
+				F19F007DA31C8D87D8629893 /* Pods-WooShot.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F6F060EA1D2DA1E400063049 = {
+			isa = PBXGroup;
+			children = (
+				F67027BB1D2DA82600F7C95A /* GoogleService-Info.plist */,
+				F6F060F51D2DA1E400063049 /* WooShot */,
+				F6F060F41D2DA1E400063049 /* Products */,
+				6A7C618AA9A355DBCE45CB40 /* Pods */,
+				45969CE0FC80E558DEB3491B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F6F060F41D2DA1E400063049 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F6F060F31D2DA1E400063049 /* WooShot.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F6F060F51D2DA1E400063049 /* WooShot */ = {
+			isa = PBXGroup;
+			children = (
+				F6F060F61D2DA1E400063049 /* AppDelegate.swift */,
+				F6F060F81D2DA1E400063049 /* ViewController.swift */,
+				F6F060FA1D2DA1E400063049 /* Main.storyboard */,
+				F6F060FD1D2DA1E400063049 /* Assets.xcassets */,
+				F6F060FF1D2DA1E400063049 /* LaunchScreen.storyboard */,
+				F6F061021D2DA1E400063049 /* Info.plist */,
+			);
+			path = WooShot;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F6F060F21D2DA1E400063049 /* WooShot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6F061051D2DA1E400063049 /* Build configuration list for PBXNativeTarget "WooShot" */;
+			buildPhases = (
+				A1BCD440DA534B48D6F49A27 /* [CP] Check Pods Manifest.lock */,
+				F6F060EF1D2DA1E400063049 /* Sources */,
+				F6F060F01D2DA1E400063049 /* Frameworks */,
+				F6F060F11D2DA1E400063049 /* Resources */,
+				4E45118C672CBE5ADF0F0B2C /* [CP] Embed Pods Frameworks */,
+				6C58B8D9E26EF0ACB7A62633 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WooShot;
+			productName = WooShot;
+			productReference = F6F060F31D2DA1E400063049 /* WooShot.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F6F060EB1D2DA1E400063049 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = WooShot;
+				TargetAttributes = {
+					F6F060F21D2DA1E400063049 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = YLWQZ572AG;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = F6F060EE1D2DA1E400063049 /* Build configuration list for PBXProject "WooShot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F6F060EA1D2DA1E400063049;
+			productRefGroup = F6F060F41D2DA1E400063049 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F6F060F21D2DA1E400063049 /* WooShot */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F6F060F11D2DA1E400063049 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6F061011D2DA1E400063049 /* LaunchScreen.storyboard in Resources */,
+				F67027BC1D2DA82600F7C95A /* GoogleService-Info.plist in Resources */,
+				F6F060FE1D2DA1E400063049 /* Assets.xcassets in Resources */,
+				F6F060FC1D2DA1E400063049 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4E45118C672CBE5ADF0F0B2C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WooShot/Pods-WooShot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C58B8D9E26EF0ACB7A62633 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WooShot/Pods-WooShot-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1BCD440DA534B48D6F49A27 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F6F060EF1D2DA1E400063049 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6F060F91D2DA1E400063049 /* ViewController.swift in Sources */,
+				F6F060F71D2DA1E400063049 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F6F060FA1D2DA1E400063049 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F6F060FB1D2DA1E400063049 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F6F060FF1D2DA1E400063049 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F6F061001D2DA1E400063049 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F6F061031D2DA1E400063049 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F6F061041D2DA1E400063049 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F6F061061D2DA1E400063049 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E97E16EADE3498A741F58F96 /* Pods-WooShot.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = WooShot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wooshot.WooShot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		F6F061071D2DA1E400063049 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F19F007DA31C8D87D8629893 /* Pods-WooShot.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = WooShot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wooshot.WooShot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F6F060EE1D2DA1E400063049 /* Build configuration list for PBXProject "WooShot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6F061031D2DA1E400063049 /* Debug */,
+				F6F061041D2DA1E400063049 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6F061051D2DA1E400063049 /* Build configuration list for PBXNativeTarget "WooShot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6F061061D2DA1E400063049 /* Debug */,
+				F6F061071D2DA1E400063049 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F6F060EB1D2DA1E400063049 /* Project object */;
+}
