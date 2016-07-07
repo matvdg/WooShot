@@ -1,0 +1,18 @@
+
+/* Class = "UITextField"; placeholder = "email"; ObjectID = "9Kr-kx-B4E"; */
+"9Kr-kx-B4E.placeholder" = "email";
+
+/* Class = "UIButton"; normalTitle = "Créer un compte"; ObjectID = "DBc-6N-0S5"; */
+"DBc-6N-0S5.normalTitle" = "Créer un compte";
+
+/* Class = "UIButton"; normalTitle = "Reset password"; ObjectID = "H5Y-A7-hI1"; */
+"H5Y-A7-hI1.normalTitle" = "Mot de passe oublié";
+
+/* Class = "UIButton"; normalTitle = "Se connecter"; ObjectID = "JHm-bs-cdE"; */
+"JHm-bs-cdE.normalTitle" = "Se connecter";
+
+/* Class = "UIButton"; normalTitle = "Se connecter avec Facebook"; ObjectID = "iev-rA-Jex"; */
+"iev-rA-Jex.normalTitle" = "Se connecter avec Facebook";
+
+/* Class = "UITextField"; placeholder = "mot de passe"; ObjectID = "jJj-av-RVA"; */
+"jJj-av-RVA.placeholder" = "mot de passe";

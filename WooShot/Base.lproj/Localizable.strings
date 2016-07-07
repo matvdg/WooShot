@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  WooShot
+
+  Created by Mathieu Vandeginste on 07/07/2016.
+  Copyright © 2016 WooShot. All rights reserved.
+*/
+
+RESET_PWD_TITLE="Reset your password?";
+RESET_PWD_MSG="If you forgot your password, an email will be sent to help you reset your password. Please type your email:";

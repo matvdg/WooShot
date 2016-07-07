@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  WooShot
+
+  Created by Mathieu Vandeginste on 07/07/2016.
+  Copyright © 2016 WooShot. All rights reserved.
+*/
+
+RESET_PWD_TITLE="Mot de passe oublié ?";
+RESET_PWD_MSG="Si vous avez perdu votre mot de passe, un email vous sera envoyé vous invitant à réinitialiser votre mot de passe. Merci d'entrer votre email :";

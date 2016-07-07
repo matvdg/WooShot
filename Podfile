@@ -6,6 +6,16 @@ target 'WooShot' do
   use_frameworks!
 
   # Pods for WooShot
-  pod 'Firebase'
+  pod 'Firebase/AdMob'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/AppIndexing'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Crash'
+  pod 'Firebase/Database'
+  #pod 'Firebase/DynamicLinks'
+  #pod 'Firebase/Invites'
+  pod 'Firebase/Messaging'
+  pod 'Firebase/RemoteConfig'
+  pod 'Firebase/Storage'
  
 end
