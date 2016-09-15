@@ -8,3 +8,10 @@
 
 RESET_PWD_TITLE="Reset your password?";
 RESET_PWD_MSG="If you forgot your password, an email will be sent to help you reset your password. Please type your email:";
+RESET_PWD_SENT_TITLE="Email sent!";
+RESET_PWD_SENT_MSG="Please check out your mailbox to reset your password.";
+HOME = "Home";
+LOGIN = "Logging in";
+SIGNUP = "Signing up";
+ERROR = "Oops!";
+EMPTY = "A field is empty!";

@@ -1,18 +1,39 @@
 
+/* Class = "UITextField"; placeholder = "mot de passe"; ObjectID = "5BG-2g-Gdl"; */
+"5BG-2g-Gdl.placeholder" = "mot de passe";
+
 /* Class = "UITextField"; placeholder = "email"; ObjectID = "9Kr-kx-B4E"; */
 "9Kr-kx-B4E.placeholder" = "email";
 
-/* Class = "UIButton"; normalTitle = "Créer un compte"; ObjectID = "DBc-6N-0S5"; */
-"DBc-6N-0S5.normalTitle" = "Créer un compte";
+/* Class = "UIButton"; normalTitle = "S'inscrire"; ObjectID = "Ety-6L-CCi"; */
+"Ety-6L-CCi.normalTitle" = "S'inscrire";
 
-/* Class = "UIButton"; normalTitle = "Reset password"; ObjectID = "H5Y-A7-hI1"; */
-"H5Y-A7-hI1.normalTitle" = "Mot de passe oublié";
+/* Class = "UIButton"; normalTitle = "Réinitialiser le mot de passe"; ObjectID = "H5Y-A7-hI1"; */
+"H5Y-A7-hI1.normalTitle" = "Mot de passe oublié ?";
 
 /* Class = "UIButton"; normalTitle = "Se connecter"; ObjectID = "JHm-bs-cdE"; */
 "JHm-bs-cdE.normalTitle" = "Se connecter";
 
-/* Class = "UIButton"; normalTitle = "Se connecter avec Facebook"; ObjectID = "iev-rA-Jex"; */
-"iev-rA-Jex.normalTitle" = "Se connecter avec Facebook";
+/* Class = "UITextField"; placeholder = "email"; ObjectID = "JlV-yj-YrR"; */
+"JlV-yj-YrR.placeholder" = "email";
+
+/* Class = "UILabel"; text = "ou"; ObjectID = "TcI-rG-Tmu"; */
+"TcI-rG-Tmu.text" = "ou";
+
+/* Class = "UIViewController"; title = "Facebook"; ObjectID = "WTs-yw-1iC"; */
+"WTs-yw-1iC.title" = "Facebook";
+
+/* Class = "UIButton"; normalTitle = "Vous avez déjà un compte ? Connectez-vous >"; ObjectID = "beU-8x-MST"; */
+"beU-8x-MST.normalTitle" = "Vous avez déjà un compte ? Connectez-vous >";
 
 /* Class = "UITextField"; placeholder = "mot de passe"; ObjectID = "jJj-av-RVA"; */
 "jJj-av-RVA.placeholder" = "mot de passe";
+
+/* Class = "UIButton"; normalTitle = "S'inscrire avec un email"; ObjectID = "mHw-a2-YBs"; */
+"mHw-a2-YBs.normalTitle" = "S'inscrire avec un email >";
+
+/* Class = "UIButton"; normalTitle = " Se connecter avec Facebook"; ObjectID = "qmE-4l-Rdr"; */
+"qmE-4l-Rdr.normalTitle" = " Se connecter avec Facebook";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "t0U-Kp-G9x"; */
+"t0U-Kp-G9x.normalTitle" = "Annuler";

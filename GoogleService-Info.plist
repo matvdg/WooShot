@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>397780474226-tm4ghon3ge6i29145ul518htrtgd4di2.apps.googleusercontent.com</string>
+	<string>677332167920-gld10k877v739ut0stl3tm53c1ju9bq5.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.397780474226-tm4ghon3ge6i29145ul518htrtgd4di2</string>
+	<string>com.googleusercontent.apps.677332167920-gld10k877v739ut0stl3tm53c1ju9bq5</string>
 	<key>API_KEY</key>
-	<string>AIzaSyA3x-YIHoqZw8sRR_Hg0PSpcWkvtnbrPZI</string>
+	<string>AIzaSyDp9zwwWwsGhrUGjTNLWN8Q-KxvRlAyphA</string>
 	<key>GCM_SENDER_ID</key>
-	<string>397780474226</string>
+	<string>677332167920</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.wooshot.WooShot</string>
 	<key>PROJECT_ID</key>
-	<string>wooshot-5f626</string>
+	<string>wooshot-8580a</string>
 	<key>STORAGE_BUCKET</key>
-	<string>wooshot-5f626.appspot.com</string>
+	<string>wooshot-8580a.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:397780474226:ios:457c1f66c3c5741b</string>
+	<string>1:677332167920:ios:457c1f66c3c5741b</string>
 	<key>DATABASE_URL</key>
-	<string>https://wooshot-5f626.firebaseio.com</string>
+	<string>https://wooshot-8580a.firebaseio.com</string>
 </dict>
 </plist>

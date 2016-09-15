@@ -1,13 +1,23 @@
+//
+//  SignUpViewController.swift
+//  WooShot
+//
+//  Created by Mathieu Vandeginste on 09/09/2016.
+//  Copyright © 2016 WooShot. All rights reserved.
+//
+
+
+  
+
 import UIKit
 import Firebase
 
-class SignInViewController: UIViewController, UITextFieldDelegate {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var elements: UIView!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var signInButton: UIButton!
-    @IBOutlet weak var resetPwdButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var activitySpin: UIActivityIndicatorView!
     
     
@@ -16,10 +26,10 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         self.view.layer.addSublayer(Color.getGradient(view: self.view))
         self.view.tintColor = Color.wooColor
         self.view.backgroundColor = Color.wooColor
-        self.signInButton.isHidden = true
+        self.signUpButton.isHidden = true
         self.emailField.isHidden = true
         self.passwordField.isHidden = true
-        self.title = NSLocalizedString("LOGIN", comment: "logging in navbar title")
+        self.title = NSLocalizedString("SIGNUP", comment: "signup in navbar title")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -27,7 +37,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func designAndAnimateButtons() {
-        let login = self.signInButton!
+        let login = self.signUpButton!
         login.titleLabel?.adjustsFontSizeToFitWidth = true
         login.layer.borderWidth = 1
         login.layer.borderColor = UIColor.white.cgColor
@@ -36,12 +46,12 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         login.setTitleColor(UIColor.white, for: .normal)
         self.emailField.layer.position.x -= self.view.bounds.width
         self.passwordField.layer.position.x -= self.view.bounds.width
-        self.signInButton.alpha = 0
-        self.signInButton.isHidden = false
+        self.signUpButton.alpha = 0
+        self.signUpButton.isHidden = false
         self.emailField.isHidden = false
         self.passwordField.isHidden = false
         if let user = FIRAuth.auth()?.currentUser {
-            self.signedIn(user)
+            self.signedUp(user)
         }
         //animations
         UIView.animate(withDuration: 1, delay: 0.00, options: UIViewAnimationOptions(), animations: {
@@ -49,10 +59,10 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             self.passwordField.layer.position.x += self.view.bounds.width
             self.view.layoutIfNeeded()
             }, completion: nil)
-        UIView.animate(withDuration: 1.5, delay: 0.30, options: .curveEaseOut, animations: { self.signInButton.alpha = 1 }, completion: nil)
+        UIView.animate(withDuration: 1.5, delay: 0.30, options: .curveEaseOut, animations: { self.signUpButton.alpha = 1 }, completion: nil)
     }
-   
-    @IBAction func didTapSignIn(_ sender: UIButton) {
+    
+    @IBAction func didTapSignUp(_ sender: UIButton) {
         self.activitySpin.startAnimating()
         // Sign In with credentials.
         let email = emailField.text!
@@ -66,9 +76,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             // show the alert
             self.present(myAlert, animated: true, completion: nil)
             self.activitySpin.stopAnimating()
-
+            
         } else {
-            FIRAuth.auth()?.signIn(withEmail: email, password: password) { (user, error) in
+            FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
                 if let error = error {
                     // create alert controller
                     let myAlert = UIAlertController(title: NSLocalizedString("ERROR", comment: "error"), message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
@@ -80,51 +90,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                     self.activitySpin.stopAnimating()
                     return
                 }
-                self.signedIn(user!)
+                self.signedUp(user!)
+                self.setDisplayName(user!)
             }
         }
-    }
-    
-    @IBAction func didRequestPasswordReset(_ sender: UIButton) {
-        let prompt = UIAlertController.init(title: NSLocalizedString("RESET_PWD_TITLE", comment: "reset password title"), message: NSLocalizedString("RESET_PWD_MSG", comment: "reset password message"), preferredStyle: UIAlertControllerStyle.alert)
-        prompt.view.tintColor = Color.wooColor
-        let okAction = UIAlertAction.init(title: "OK", style: UIAlertActionStyle.default) { (action) in
-            let userInput = prompt.textFields![0].text
-            if (userInput!.isEmpty) {
-                // create alert controller
-                let myAlert = UIAlertController(title: NSLocalizedString("ERROR", comment: "error"), message: NSLocalizedString("EMPTY", comment: "empty field"), preferredStyle: UIAlertControllerStyle.alert)
-                myAlert.view.tintColor = Color.wooColor
-                // add "OK" button
-                myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                // show the alert
-                self.present(myAlert, animated: true, completion: nil)
-                return
-            }
-            FIRAuth.auth()?.sendPasswordReset(withEmail: userInput!) { (error) in
-                if let error = error {
-                    // create alert controller
-                    let myAlert = UIAlertController(title: NSLocalizedString("ERROR", comment: "error"), message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-                    myAlert.view.tintColor = Color.wooColor
-                    // add "OK" button
-                    myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                    // show the alert
-                    self.present(myAlert, animated: true, completion: nil)
-                    return
-                } else {
-                    // create alert controller
-                    let myAlert = UIAlertController(title: NSLocalizedString("RESET_PWD_SENT_TITLE", comment: "reset done title"), message: NSLocalizedString("RESET_PWD_SENT_MSG", comment: "reset done message"), preferredStyle: UIAlertControllerStyle.alert)
-                    myAlert.view.tintColor = Color.wooColor
-                    // add "OK" button
-                    myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                    // show the alert
-                    self.present(myAlert, animated: true, completion: nil)
-                    return
-                }
-            }
-        }
-        prompt.addTextField(configurationHandler: nil)
-        prompt.addAction(okAction)
-        present(prompt, animated: true, completion: nil)
+            
     }
     
     func setDisplayName(_ user: FIRUser) {
@@ -135,11 +105,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                 print(error.localizedDescription)
                 return
             }
-            self.signedIn(FIRAuth.auth()?.currentUser)
+            self.signedUp(FIRAuth.auth()?.currentUser)
         }
     }
     
-    func signedIn(_ user: FIRUser?) {
+    func signedUp(_ user: FIRUser?) {
         self.activitySpin.stopAnimating()
     }
     
@@ -164,3 +134,4 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     
 }
+

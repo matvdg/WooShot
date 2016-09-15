@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		B36CE49C9F4FB9D13E147DA3 /* Pods_WooShot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02683531865C56589A458F00 /* Pods_WooShot.framework */; };
+		F614AC801D82BE2500CFEDFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F614AC7F1D82BE2500CFEDFD /* GoogleService-Info.plist */; };
 		F66911041D2DDF060000A447 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66911031D2DDF060000A447 /* SignInViewController.swift */; };
-		F67027BC1D2DA82600F7C95A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F67027BB1D2DA82600F7C95A /* GoogleService-Info.plist */; };
+		F69FEF321D83054A003EEFA2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69FEF311D83054A003EEFA2 /* HomeViewController.swift */; };
+		F6B60FDD1D82EEF60046D3ED /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B60FDC1D82EEF60046D3ED /* Color.swift */; };
+		F6C4728F1D83262400D42320 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C4728E1D83262400D42320 /* SignUpViewController.swift */; };
+		F6C472911D83264100D42320 /* FbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C472901D83264100D42320 /* FbViewController.swift */; };
 		F6C64E581D2E9C5600CEBF50 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F6C64E5A1D2E9C5600CEBF50 /* Localizable.strings */; };
 		F6F060F71D2DA1E400063049 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F060F61D2DA1E400063049 /* AppDelegate.swift */; };
 		F6F060FC1D2DA1E400063049 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6F060FA1D2DA1E400063049 /* Main.storyboard */; };
@@ -21,9 +25,14 @@
 		02683531865C56589A458F00 /* Pods_WooShot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WooShot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E97E16EADE3498A741F58F96 /* Pods-WooShot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WooShot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WooShot/Pods-WooShot.debug.xcconfig"; sourceTree = "<group>"; };
 		F19F007DA31C8D87D8629893 /* Pods-WooShot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WooShot.release.xcconfig"; path = "Pods/Target Support Files/Pods-WooShot/Pods-WooShot.release.xcconfig"; sourceTree = "<group>"; };
+		F614AC7F1D82BE2500CFEDFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F614AC9F1D82C18E00CFEDFD /* WooShot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WooShot.entitlements; sourceTree = "<group>"; };
 		F66911031D2DDF060000A447 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		F66E56B71D2DECB500EFC793 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
-		F67027BB1D2DA82600F7C95A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F69FEF311D83054A003EEFA2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F6B60FDC1D82EEF60046D3ED /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		F6C4728E1D83262400D42320 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		F6C472901D83264100D42320 /* FbViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FbViewController.swift; sourceTree = "<group>"; };
+		F6C472961D832B4200D42320 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		F6C64E591D2E9C5600CEBF50 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F6C64E5C1D2E9C5F00CEBF50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F6C9E3AE1D2DE0BC00F66FA5 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -64,23 +73,52 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		F6D0D2D41D2DCB5D00E7E25C /* Supporting Files */ = {
+		F641AA9E1D8832FD00BC07C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		F641AA9F1D88330500BC07C8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F69FEF311D83054A003EEFA2 /* HomeViewController.swift */,
+				F66911031D2DDF060000A447 /* SignInViewController.swift */,
+				F6C4728E1D83262400D42320 /* SignUpViewController.swift */,
+				F6C472901D83264100D42320 /* FbViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		F641AAA01D88330D00BC07C8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				F6F060FA1D2DA1E400063049 /* Main.storyboard */,
-				F6F060F61D2DA1E400063049 /* AppDelegate.swift */,
-				F6F060FF1D2DA1E400063049 /* LaunchScreen.storyboard */,
-				F6F061021D2DA1E400063049 /* Info.plist */,
 				F6C64E5A1D2E9C5600CEBF50 /* Localizable.strings */,
+				F6F060FF1D2DA1E400063049 /* LaunchScreen.storyboard */,
+				F6B60FDC1D82EEF60046D3ED /* Color.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		F6D0D2D41D2DCB5D00E7E25C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F614AC9F1D82C18E00CFEDFD /* WooShot.entitlements */,
+				F6F060F61D2DA1E400063049 /* AppDelegate.swift */,
+				F6F061021D2DA1E400063049 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			path = WooShot;
 			sourceTree = "<group>";
 		};
 		F6F060EA1D2DA1E400063049 = {
 			isa = PBXGroup;
 			children = (
-				F67027BB1D2DA82600F7C95A /* GoogleService-Info.plist */,
+				F614AC7F1D82BE2500CFEDFD /* GoogleService-Info.plist */,
 				F6F060F51D2DA1E400063049 /* WooShot */,
+				F6D0D2D41D2DCB5D00E7E25C /* Supporting Files */,
 				F6F060F41D2DA1E400063049 /* Products */,
 				6A7C618AA9A355DBCE45CB40 /* Pods */,
 				45969CE0FC80E558DEB3491B /* Frameworks */,
@@ -98,8 +136,9 @@
 		F6F060F51D2DA1E400063049 /* WooShot */ = {
 			isa = PBXGroup;
 			children = (
-				F66911031D2DDF060000A447 /* SignInViewController.swift */,
-				F6D0D2D41D2DCB5D00E7E25C /* Supporting Files */,
+				F641AAA01D88330D00BC07C8 /* Views */,
+				F641AA9F1D88330500BC07C8 /* Controllers */,
+				F641AA9E1D8832FD00BC07C8 /* Models */,
 				F6F060FD1D2DA1E400063049 /* Assets.xcassets */,
 			);
 			path = WooShot;
@@ -136,12 +175,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = WooShot;
 				TargetAttributes = {
 					F6F060F21D2DA1E400063049 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = YLWQZ572AG;
+						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -178,7 +218,7 @@
 			files = (
 				F6C64E581D2E9C5600CEBF50 /* Localizable.strings in Resources */,
 				F6F061011D2DA1E400063049 /* LaunchScreen.storyboard in Resources */,
-				F67027BC1D2DA82600F7C95A /* GoogleService-Info.plist in Resources */,
+				F614AC801D82BE2500CFEDFD /* GoogleService-Info.plist in Resources */,
 				F6F060FE1D2DA1E400063049 /* Assets.xcassets in Resources */,
 				F6F060FC1D2DA1E400063049 /* Main.storyboard in Resources */,
 			);
@@ -254,6 +294,10 @@
 			files = (
 				F66911041D2DDF060000A447 /* SignInViewController.swift in Sources */,
 				F6F060F71D2DA1E400063049 /* AppDelegate.swift in Sources */,
+				F6B60FDD1D82EEF60046D3ED /* Color.swift in Sources */,
+				F69FEF321D83054A003EEFA2 /* HomeViewController.swift in Sources */,
+				F6C472911D83264100D42320 /* FbViewController.swift in Sources */,
+				F6C4728F1D83262400D42320 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +317,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F6F060FB1D2DA1E400063049 /* Base */,
-				F66E56B71D2DECB500EFC793 /* fr */,
+				F6C472961D832B4200D42320 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -294,6 +338,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -304,8 +349,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -327,7 +374,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -339,6 +386,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -349,8 +397,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -366,7 +416,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -378,14 +428,16 @@
 			baseConfigurationReference = E97E16EADE3498A741F58F96 /* Pods-WooShot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WooShot/WooShot.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = WooShot/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wooshot.WooShot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -394,14 +446,17 @@
 			baseConfigurationReference = F19F007DA31C8D87D8629893 /* Pods-WooShot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WooShot/WooShot.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = WooShot/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wooshot.WooShot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
