@@ -12,7 +12,7 @@
 import UIKit
 import Firebase
 
-class SignUpViewController: UIViewController, UITextFieldDelegate {
+class SignUpViewController: WooShotViewController, UITextFieldDelegate {
     
     @IBOutlet weak var elements: UIView!
     @IBOutlet weak var emailField: UITextField!
@@ -22,8 +22,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         self.elements.layer.zPosition = 1
-        self.view.layer.addSublayer(Color.getGradient(view: self.view))
         self.view.tintColor = Color.wooColor
         self.view.backgroundColor = Color.wooColor
         self.signUpButton.isHidden = true
@@ -49,6 +49,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         self.signUpButton.alpha = 0
         self.signUpButton.isHidden = false
         self.emailField.isHidden = false
+        self.emailField.alpha = 0.25
+        self.passwordField.alpha = 0.25
+
+        
+        
         self.passwordField.isHidden = false
         if let user = FIRAuth.auth()?.currentUser {
             self.signedUp(user)
@@ -90,7 +95,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                     self.activitySpin.stopAnimating()
                     return
                 }
-                self.signedUp(user!)
                 self.setDisplayName(user!)
             }
         }
@@ -106,6 +110,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 return
             }
             self.signedUp(FIRAuth.auth()?.currentUser)
+            print(user.email, user.displayName)
         }
     }
     

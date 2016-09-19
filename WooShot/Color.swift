@@ -10,9 +10,9 @@ import UIKit
 
 class Color {
     
-    static let wooColor = UIColor(red: 238/255, green: 68/255, blue: 128/255, alpha: 1.0)
+    static let wooColor = UIColor(red: 233/255, green: 30/255, blue: 99/255, alpha: 1.0)
     
-    static let wooColorDark = UIColor(red: 198/255, green: 26/255, blue: 98/255, alpha: 1.0)
+    static let wooColorDark = UIColor(red: 197/255, green: 17/255, blue: 98/255, alpha: 1.0)
     
     static func getGradient(view: UIView) -> CAGradientLayer {
         let gradientLayer = CAGradientLayer()

@@ -1,7 +1,7 @@
 import UIKit
 import Firebase
 
-class SignInViewController: UIViewController, UITextFieldDelegate {
+class SignInViewController: WooShotViewController, UITextFieldDelegate {
     
     @IBOutlet weak var elements: UIView!
     @IBOutlet weak var emailField: UITextField!
@@ -12,8 +12,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         self.elements.layer.zPosition = 1
-        self.view.layer.addSublayer(Color.getGradient(view: self.view))
         self.view.tintColor = Color.wooColor
         self.view.backgroundColor = Color.wooColor
         self.signInButton.isHidden = true

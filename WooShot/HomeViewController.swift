@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: WooShotViewController {
 
     @IBOutlet weak var elements: UIView!
     
@@ -18,9 +18,12 @@ class HomeViewController: UIViewController {
     
     
     override func viewDidLoad() {
+//        let loginButton = LoginButton(readPermissions: [ .PublicProfile ])
+//        loginButton.center = view.center
+        
+        //view.addSubview(loginButton)
         super.viewDidLoad()
         self.elements.layer.zPosition = 1
-        self.view.layer.addSublayer(Color.getGradient(view: self.view))
         let nav = self.navigationController!.navigationBar
         nav.barTintColor = Color.wooColorDark
         nav.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
@@ -43,6 +46,7 @@ class HomeViewController: UIViewController {
         let signUp = self.signUpButton!
         signUp.titleLabel?.adjustsFontSizeToFitWidth = true
         self.loginButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        self.loginButton.backgroundColor = Color.wooColorDark
         signUp.layer.borderWidth = 1
         signUp.layer.borderColor = UIColor.white.cgColor
         signUp.layer.cornerRadius = signUp.bounds.height/2

@@ -15,3 +15,4 @@ LOGIN = "Logging in";
 SIGNUP = "Signing up";
 ERROR = "Oops!";
 EMPTY = "A field is empty!";
+SLOGAN = "You're gonna enjoy your night !";

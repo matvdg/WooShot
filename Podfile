@@ -17,5 +17,7 @@ target 'WooShot' do
   pod 'Firebase/Messaging'
   pod 'Firebase/RemoteConfig'
   pod 'Firebase/Storage'
- 
+ # pod 'FacebookCore'
+ # pod 'FacebookLogin'
+#  pod 'FacebookShare' 
 end
