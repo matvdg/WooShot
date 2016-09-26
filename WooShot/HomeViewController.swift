@@ -26,6 +26,7 @@ class HomeViewController: WooShotViewController {
         self.elements.layer.zPosition = 1
         let nav = self.navigationController!.navigationBar
         nav.barTintColor = Color.wooColorDark
+        nav.tintColor = UIColor.white
         nav.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         let backItem = UIBarButtonItem()
         backItem.title = NSLocalizedString("HOME", comment: "back button")
@@ -40,16 +41,16 @@ class HomeViewController: WooShotViewController {
         let layer = self.fbloginButton.layer
         layer.cornerRadius = self.fbloginButton.frame.height / 2
         self.fbloginButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        layer.shadowOffset = CGSize(width: -1, height: 1)
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.5
+//        layer.shadowOffset = CGSize(width: -1, height: 1)
+//        layer.shadowColor = UIColor.black.cgColor
+//        layer.shadowOpacity = 0.5
         let signUp = self.signUpButton!
         signUp.titleLabel?.adjustsFontSizeToFitWidth = true
         self.loginButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        self.loginButton.backgroundColor = Color.wooColorDark
-        signUp.layer.borderWidth = 1
-        signUp.layer.borderColor = UIColor.white.cgColor
-        signUp.layer.cornerRadius = signUp.bounds.height/2
+        //self.loginButton.backgroundColor = Color.p600
+//        signUp.layer.borderWidth = 1
+//        signUp.layer.borderColor = UIColor.white.cgColor
+//        signUp.layer.cornerRadius = signUp.bounds.height/2
     }
 
 

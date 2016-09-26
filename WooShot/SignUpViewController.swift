@@ -18,6 +18,8 @@ class SignUpViewController: WooShotViewController, UITextFieldDelegate {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var separator: UIView!
+    @IBOutlet weak var confidentiality: UIButton!
     @IBOutlet weak var activitySpin: UIActivityIndicatorView!
     
     
@@ -25,46 +27,62 @@ class SignUpViewController: WooShotViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.elements.layer.zPosition = 1
         self.view.tintColor = Color.wooColor
-        self.view.backgroundColor = Color.wooColor
+        self.confidentiality.isHidden = true
         self.signUpButton.isHidden = true
         self.emailField.isHidden = true
         self.passwordField.isHidden = true
+        self.separator.isHidden = true
         self.title = NSLocalizedString("SIGNUP", comment: "signup in navbar title")
     }
     
     override func viewDidAppear(_ animated: Bool) {
         self.designAndAnimateButtons()
+        self.emailField.becomeFirstResponder()
     }
     
     private func designAndAnimateButtons() {
-        let login = self.signUpButton!
-        login.titleLabel?.adjustsFontSizeToFitWidth = true
-        login.layer.borderWidth = 1
-        login.layer.borderColor = UIColor.white.cgColor
-        login.layer.cornerRadius = login.bounds.height/2
-        login.backgroundColor = UIColor.clear
-        login.setTitleColor(UIColor.white, for: .normal)
-        self.emailField.layer.position.x -= self.view.bounds.width
-        self.passwordField.layer.position.x -= self.view.bounds.width
-        self.signUpButton.alpha = 0
-        self.signUpButton.isHidden = false
-        self.emailField.isHidden = false
-        self.emailField.alpha = 0.25
-        self.passwordField.alpha = 0.25
-
+        let whitePlaceholder = UIColor(white: 1, alpha: 0.54)
+        let signup = self.signUpButton!
+        let email = self.emailField!
+        let password = self.passwordField!
+        let separator = self.separator!
+        let policy = self.confidentiality!
         
-        
-        self.passwordField.isHidden = false
+        signup.titleLabel?.adjustsFontSizeToFitWidth = true
+        signup.layer.cornerRadius = signup.bounds.height/2
+        signup.backgroundColor = UIColor.white
+        signup.setTitleColor(Color.wooColor, for: .normal)
+        email.layer.position.x -= self.view.bounds.width
+        password.layer.position.x -= self.view.bounds.width
+        separator.layer.position.x -= self.view.bounds.width
+        signup.alpha = 0
+        policy.alpha = 0
+        email.layer.cornerRadius = 5
+        password.layer.cornerRadius = 5
+        signup.isHidden = false
+        email.isHidden = false
+        password.isHidden = false
+        separator.isHidden = false
+        policy.isHidden = false
+        email.attributedPlaceholder = NSAttributedString(string:NSLocalizedString("PLACEHOLDER_EMAIL", comment: "email"),attributes:[NSForegroundColorAttributeName: whitePlaceholder])
+        email.textColor = UIColor.white
+        password.textColor = UIColor.white
+        password.attributedPlaceholder = NSAttributedString(string:NSLocalizedString("PLACEHOLDER_PWD", comment: "password"),attributes:[NSForegroundColorAttributeName: whitePlaceholder])
         if let user = FIRAuth.auth()?.currentUser {
             self.signedUp(user)
         }
         //animations
-        UIView.animate(withDuration: 1, delay: 0.00, options: UIViewAnimationOptions(), animations: {
-            self.emailField.layer.position.x += self.view.bounds.width
-            self.passwordField.layer.position.x += self.view.bounds.width
+        UIView.animate(withDuration: 0.5, delay: 0.00, options: UIViewAnimationOptions(), animations: {
+            email.layer.position.x += self.view.bounds.width
+            password.layer.position.x += self.view.bounds.width
+            separator.layer.position.x += self.view.bounds.width
             self.view.layoutIfNeeded()
             }, completion: nil)
-        UIView.animate(withDuration: 1.5, delay: 0.30, options: .curveEaseOut, animations: { self.signUpButton.alpha = 1 }, completion: nil)
+        UIView.animate(withDuration: 1.0, delay: 0.30, options: .curveEaseOut, animations: {
+            signup.alpha = 1
+            policy.alpha = 1
+            
+            }, completion: nil)
     }
     
     @IBAction func didTapSignUp(_ sender: UIButton) {

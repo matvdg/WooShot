@@ -16,3 +16,5 @@ SIGNUP = "Signing up";
 ERROR = "Oops!";
 EMPTY = "A field is empty!";
 SLOGAN = "You're gonna enjoy your night !";
+PLACEHOLDER_EMAIL = "Email address";
+PLACEHOLDER_PWD = "Password";

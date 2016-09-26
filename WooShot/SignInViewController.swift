@@ -10,46 +10,53 @@ class SignInViewController: WooShotViewController, UITextFieldDelegate {
     @IBOutlet weak var resetPwdButton: UIButton!
     @IBOutlet weak var activitySpin: UIActivityIndicatorView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.elements.layer.zPosition = 1
-        self.view.tintColor = Color.wooColor
-        self.view.backgroundColor = Color.wooColor
+        self.view.tintColor = UIColor.white
         self.signInButton.isHidden = true
         self.emailField.isHidden = true
-        self.passwordField.isHidden = true
+        self.passwordField!.isHidden = true
         self.title = NSLocalizedString("LOGIN", comment: "logging in navbar title")
     }
     
     override func viewDidAppear(_ animated: Bool) {
         self.designAndAnimateButtons()
-    }
-    
-    private func designAndAnimateButtons() {
-        let login = self.signInButton!
-        login.titleLabel?.adjustsFontSizeToFitWidth = true
-        login.layer.borderWidth = 1
-        login.layer.borderColor = UIColor.white.cgColor
-        login.layer.cornerRadius = login.bounds.height/2
-        login.backgroundColor = UIColor.clear
-        login.setTitleColor(UIColor.white, for: .normal)
-        self.emailField.layer.position.x -= self.view.bounds.width
-        self.passwordField.layer.position.x -= self.view.bounds.width
-        self.signInButton.alpha = 0
-        self.signInButton.isHidden = false
-        self.emailField.isHidden = false
-        self.passwordField.isHidden = false
+        self.emailField.becomeFirstResponder()
         if let user = FIRAuth.auth()?.currentUser {
             self.signedIn(user)
         }
+    }
+    
+    private func designAndAnimateButtons() {
+        let whitePlaceholder = UIColor(white: 1, alpha: 0.54)
+        let login = self.signInButton!
+        let email = self.emailField!
+        let password = self.passwordField!
+        login.titleLabel?.adjustsFontSizeToFitWidth = true
+        login.layer.cornerRadius = login.bounds.height/2
+        login.backgroundColor = UIColor.white
+        login.setTitleColor(Color.wooColor, for: .normal)
+        email.layer.position.x -= self.view.bounds.width
+        password.layer.position.x -= self.view.bounds.width
+        self.signInButton.alpha = 0
+        self.signInButton.isHidden = false
+        email.isHidden = false
+        email.layer.cornerRadius = 5
+        password.layer.cornerRadius = 5
+        password.isHidden = false
+        email.attributedPlaceholder = NSAttributedString(string:NSLocalizedString("PLACEHOLDER_EMAIL", comment: "email"),attributes:[NSForegroundColorAttributeName: whitePlaceholder])
+        email.textColor = UIColor.white
+        password.textColor = UIColor.white
+        password.attributedPlaceholder = NSAttributedString(string:NSLocalizedString("PLACEHOLDER_PWD", comment: "password"),attributes:[NSForegroundColorAttributeName: whitePlaceholder])
+        
         //animations
-        UIView.animate(withDuration: 1, delay: 0.00, options: UIViewAnimationOptions(), animations: {
-            self.emailField.layer.position.x += self.view.bounds.width
-            self.passwordField.layer.position.x += self.view.bounds.width
+        UIView.animate(withDuration: 0.5, delay: 0.00, options: UIViewAnimationOptions(), animations: {
+            email.layer.position.x += self.view.bounds.width
+            password.layer.position.x += self.view.bounds.width
             self.view.layoutIfNeeded()
             }, completion: nil)
-        UIView.animate(withDuration: 1.5, delay: 0.30, options: .curveEaseOut, animations: { self.signInButton.alpha = 1 }, completion: nil)
+        UIView.animate(withDuration: 1.0, delay: 0.30, options: .curveEaseOut, animations: { login.alpha = 1 }, completion: nil)
     }
    
     @IBAction func didTapSignIn(_ sender: UIButton) {
