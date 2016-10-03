@@ -3,6 +3,7 @@ import Firebase
 
 class SignInViewController: WooShotViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var separator: UIView!
     @IBOutlet weak var elements: UIView!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -16,6 +17,7 @@ class SignInViewController: WooShotViewController, UITextFieldDelegate {
         self.view.tintColor = UIColor.white
         self.signInButton.isHidden = true
         self.emailField.isHidden = true
+        self.separator.isHidden = true
         self.passwordField!.isHidden = true
         self.title = NSLocalizedString("LOGIN", comment: "logging in navbar title")
     }
@@ -33,17 +35,18 @@ class SignInViewController: WooShotViewController, UITextFieldDelegate {
         let login = self.signInButton!
         let email = self.emailField!
         let password = self.passwordField!
+        let separator = self.separator!
         login.titleLabel?.adjustsFontSizeToFitWidth = true
         login.layer.cornerRadius = login.bounds.height/2
         login.backgroundColor = UIColor.white
         login.setTitleColor(Color.wooColor, for: .normal)
         email.layer.position.x -= self.view.bounds.width
         password.layer.position.x -= self.view.bounds.width
-        self.signInButton.alpha = 0
-        self.signInButton.isHidden = false
+        separator.layer.position.x -= self.view.bounds.width
+        login.alpha = 0
+        separator.isHidden = false
+        login.isHidden = false
         email.isHidden = false
-        email.layer.cornerRadius = 5
-        password.layer.cornerRadius = 5
         password.isHidden = false
         email.attributedPlaceholder = NSAttributedString(string:NSLocalizedString("PLACEHOLDER_EMAIL", comment: "email"),attributes:[NSForegroundColorAttributeName: whitePlaceholder])
         email.textColor = UIColor.white
@@ -54,6 +57,7 @@ class SignInViewController: WooShotViewController, UITextFieldDelegate {
         UIView.animate(withDuration: 0.5, delay: 0.00, options: UIViewAnimationOptions(), animations: {
             email.layer.position.x += self.view.bounds.width
             password.layer.position.x += self.view.bounds.width
+            separator.layer.position.x += self.view.bounds.width
             self.view.layoutIfNeeded()
             }, completion: nil)
         UIView.animate(withDuration: 1.0, delay: 0.30, options: .curveEaseOut, animations: { login.alpha = 1 }, completion: nil)
@@ -148,10 +152,6 @@ class SignInViewController: WooShotViewController, UITextFieldDelegate {
     
     func signedIn(_ user: FIRUser?) {
         self.activitySpin.stopAnimating()
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

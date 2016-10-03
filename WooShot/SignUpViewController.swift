@@ -57,8 +57,6 @@ class SignUpViewController: WooShotViewController, UITextFieldDelegate {
         separator.layer.position.x -= self.view.bounds.width
         signup.alpha = 0
         policy.alpha = 0
-        email.layer.cornerRadius = 5
-        password.layer.cornerRadius = 5
         signup.isHidden = false
         email.isHidden = false
         password.isHidden = false
@@ -68,9 +66,6 @@ class SignUpViewController: WooShotViewController, UITextFieldDelegate {
         email.textColor = UIColor.white
         password.textColor = UIColor.white
         password.attributedPlaceholder = NSAttributedString(string:NSLocalizedString("PLACEHOLDER_PWD", comment: "password"),attributes:[NSForegroundColorAttributeName: whitePlaceholder])
-        if let user = FIRAuth.auth()?.currentUser {
-            self.signedUp(user)
-        }
         //animations
         UIView.animate(withDuration: 0.5, delay: 0.00, options: UIViewAnimationOptions(), animations: {
             email.layer.position.x += self.view.bounds.width
@@ -86,58 +81,37 @@ class SignUpViewController: WooShotViewController, UITextFieldDelegate {
     }
     
     @IBAction func didTapSignUp(_ sender: UIButton) {
-        self.activitySpin.startAnimating()
-        // Sign In with credentials.
-        let email = emailField.text!
-        let password = passwordField.text!
-        if email.isEmpty || password.isEmpty {
-            // create alert controller
-            let myAlert = UIAlertController(title: NSLocalizedString("ERROR", comment: "error"), message: NSLocalizedString("EMPTY", comment: "empty field"), preferredStyle: UIAlertControllerStyle.alert)
-            myAlert.view.tintColor = Color.wooColor
-            // add "OK" button
-            myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-            // show the alert
-            self.present(myAlert, animated: true, completion: nil)
-            self.activitySpin.stopAnimating()
-            
-        } else {
-            FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
-                if let error = error {
-                    // create alert controller
-                    let myAlert = UIAlertController(title: NSLocalizedString("ERROR", comment: "error"), message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-                    myAlert.view.tintColor = Color.wooColor
-                    // add "OK" button
-                    myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                    // show the alert
-                    self.present(myAlert, animated: true, completion: nil)
-                    self.activitySpin.stopAnimating()
-                    return
-                }
-                self.setDisplayName(user!)
-            }
-        }
-            
-    }
-    
-    func setDisplayName(_ user: FIRUser) {
-        let changeRequest = user.profileChangeRequest()
-        changeRequest.displayName = user.email!.components(separatedBy: "@")[0]
-        changeRequest.commitChanges(){ (error) in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            self.signedUp(FIRAuth.auth()?.currentUser)
-            print(user.email, user.displayName)
-        }
-    }
-    
-    func signedUp(_ user: FIRUser?) {
-        self.activitySpin.stopAnimating()
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+//        self.activitySpin.startAnimating()
+//        let email = emailField.text!
+//        let password = passwordField.text!
+//        if email.isEmpty || password.isEmpty { //error
+//            // create alert controller
+//            let myAlert = UIAlertController(title: NSLocalizedString("ERROR", comment: "error"), message: NSLocalizedString("EMPTY", comment: "empty field"), preferredStyle: UIAlertControllerStyle.alert)
+//            myAlert.view.tintColor = Color.wooColor
+//            // add "OK" button
+//            myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+//            // show the alert
+//            self.present(myAlert, animated: true, completion: nil)
+//            self.activitySpin.stopAnimating()
+//            
+//        } else { //auth ok
+//            FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
+//                if let error = error {
+//                    // create alert controller
+//                    let myAlert = UIAlertController(title: NSLocalizedString("ERROR", comment: "error"), message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+//                    myAlert.view.tintColor = Color.wooColor
+//                    // add "OK" button
+//                    myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+//                    // show the alert
+//                    self.present(myAlert, animated: true, completion: nil)
+//                    self.activitySpin.stopAnimating()
+//                    return
+//                }
+//                //let's go!
+//                self.activitySpin.stopAnimating()
+                self.performSegue(withIdentifier: "firstLaunch", sender: self)
+//            }
+//        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -155,6 +129,9 @@ class SignUpViewController: WooShotViewController, UITextFieldDelegate {
         return false
         // We do not want UITextField to insert line-breaks.
     }
+    
+ 
+
     
 }
 

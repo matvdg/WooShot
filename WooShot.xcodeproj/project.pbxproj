@@ -9,10 +9,7 @@
 /* Begin PBXBuildFile section */
 		B36CE49C9F4FB9D13E147DA3 /* Pods_WooShot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02683531865C56589A458F00 /* Pods_WooShot.framework */; };
 		F614AC801D82BE2500CFEDFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F614AC7F1D82BE2500CFEDFD /* GoogleService-Info.plist */; };
-		F642C4BB1D905B3C000A03D5 /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F642C4BA1D905B3C000A03D5 /* NameViewController.swift */; };
-		F642C4BD1D905B51000A03D5 /* SexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F642C4BC1D905B51000A03D5 /* SexViewController.swift */; };
-		F642C4C01D905B63000A03D5 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F642C4BF1D905B63000A03D5 /* PreferencesViewController.swift */; };
-		F642C4C21D905B6F000A03D5 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F642C4C11D905B6F000A03D5 /* PhotoViewController.swift */; };
+		F637537C1D9A98BC00EA3ACC /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F637537B1D9A98BC00EA3ACC /* TutorialViewController.swift */; };
 		F66911041D2DDF060000A447 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66911031D2DDF060000A447 /* SignInViewController.swift */; };
 		F67344011D9957680010311B /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67344001D9957680010311B /* PolicyViewController.swift */; };
 		F69FEF321D83054A003EEFA2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69FEF311D83054A003EEFA2 /* HomeViewController.swift */; };
@@ -33,10 +30,7 @@
 		F19F007DA31C8D87D8629893 /* Pods-WooShot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WooShot.release.xcconfig"; path = "Pods/Target Support Files/Pods-WooShot/Pods-WooShot.release.xcconfig"; sourceTree = "<group>"; };
 		F614AC7F1D82BE2500CFEDFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F614AC9F1D82C18E00CFEDFD /* WooShot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WooShot.entitlements; sourceTree = "<group>"; };
-		F642C4BA1D905B3C000A03D5 /* NameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
-		F642C4BC1D905B51000A03D5 /* SexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SexViewController.swift; sourceTree = "<group>"; };
-		F642C4BF1D905B63000A03D5 /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
-		F642C4C11D905B6F000A03D5 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		F637537B1D9A98BC00EA3ACC /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		F66911031D2DDF060000A447 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		F67344001D9957680010311B /* PolicyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
 		F690FA351D903DD4006CB064 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
@@ -97,9 +91,10 @@
 			children = (
 				F69FEF311D83054A003EEFA2 /* HomeViewController.swift */,
 				F66911031D2DDF060000A447 /* SignInViewController.swift */,
-				F6C4728E1D83262400D42320 /* SignUpViewController.swift */,
 				F6C472901D83264100D42320 /* FbViewController.swift */,
 				F67344001D9957680010311B /* PolicyViewController.swift */,
+				F6C4728E1D83262400D42320 /* SignUpViewController.swift */,
+				F637537B1D9A98BC00EA3ACC /* TutorialViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -113,20 +108,8 @@
 				F6F060FF1D2DA1E400063049 /* LaunchScreen.storyboard */,
 				F6B60FDC1D82EEF60046D3ED /* Color.swift */,
 				F6DEEF8C1D8FF387003869B5 /* WooShotViewController.swift */,
-				F642C4BE1D905B56000A03D5 /* FirstLaunch */,
 			);
 			name = Views;
-			sourceTree = "<group>";
-		};
-		F642C4BE1D905B56000A03D5 /* FirstLaunch */ = {
-			isa = PBXGroup;
-			children = (
-				F642C4BA1D905B3C000A03D5 /* NameViewController.swift */,
-				F642C4BC1D905B51000A03D5 /* SexViewController.swift */,
-				F642C4BF1D905B63000A03D5 /* PreferencesViewController.swift */,
-				F642C4C11D905B6F000A03D5 /* PhotoViewController.swift */,
-			);
-			name = FirstLaunch;
 			sourceTree = "<group>";
 		};
 		F6D0D2D41D2DCB5D00E7E25C /* Supporting Files */ = {
@@ -319,17 +302,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F66911041D2DDF060000A447 /* SignInViewController.swift in Sources */,
+				F637537C1D9A98BC00EA3ACC /* TutorialViewController.swift in Sources */,
 				F6DEEF8D1D8FF387003869B5 /* WooShotViewController.swift in Sources */,
 				F6F060F71D2DA1E400063049 /* AppDelegate.swift in Sources */,
-				F642C4BD1D905B51000A03D5 /* SexViewController.swift in Sources */,
-				F642C4BB1D905B3C000A03D5 /* NameViewController.swift in Sources */,
-				F642C4C01D905B63000A03D5 /* PreferencesViewController.swift in Sources */,
 				F6B60FDD1D82EEF60046D3ED /* Color.swift in Sources */,
 				F69FEF321D83054A003EEFA2 /* HomeViewController.swift in Sources */,
 				F67344011D9957680010311B /* PolicyViewController.swift in Sources */,
 				F6C472911D83264100D42320 /* FbViewController.swift in Sources */,
 				F6C4728F1D83262400D42320 /* SignUpViewController.swift in Sources */,
-				F642C4C21D905B6F000A03D5 /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
