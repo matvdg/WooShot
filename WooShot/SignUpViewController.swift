@@ -25,36 +25,36 @@ class SignUpViewController: WooShotViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.elements.layer.zPosition = 1
-        self.view.tintColor = Color.wooColor
-        self.confidentiality.isHidden = true
-        self.signUpButton.isHidden = true
-        self.emailField.isHidden = true
-        self.passwordField.isHidden = true
-        self.separator.isHidden = true
-        self.title = NSLocalizedString("SIGNUP", comment: "signup in navbar title")
+        elements.layer.zPosition = 1
+        view.tintColor = Color.wooColor
+        confidentiality.isHidden = true
+        signUpButton.isHidden = true
+        emailField.isHidden = true
+        passwordField.isHidden = true
+        separator.isHidden = true
+        title = NSLocalizedString("SIGNUP", comment: "signup in navbar title")
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.designAndAnimateButtons()
-        self.emailField.becomeFirstResponder()
+        designAndAnimateButtons()
+        emailField.becomeFirstResponder()
     }
     
     private func designAndAnimateButtons() {
         let whitePlaceholder = UIColor(white: 1, alpha: 0.54)
-        let signup = self.signUpButton!
-        let email = self.emailField!
-        let password = self.passwordField!
+        let signup = signUpButton!
+        let email = emailField!
+        let password = passwordField!
         let separator = self.separator!
-        let policy = self.confidentiality!
+        let policy = confidentiality!
         
         signup.titleLabel?.adjustsFontSizeToFitWidth = true
         signup.layer.cornerRadius = signup.bounds.height/2
         signup.backgroundColor = UIColor.white
         signup.setTitleColor(Color.wooColor, for: .normal)
-        email.layer.position.x -= self.view.bounds.width
-        password.layer.position.x -= self.view.bounds.width
-        separator.layer.position.x -= self.view.bounds.width
+        email.layer.position.x -= view.bounds.width
+        password.layer.position.x -= view.bounds.width
+        separator.layer.position.x -= view.bounds.width
         signup.alpha = 0
         policy.alpha = 0
         signup.isHidden = false
@@ -66,22 +66,18 @@ class SignUpViewController: WooShotViewController, UITextFieldDelegate {
         email.textColor = UIColor.white
         password.textColor = UIColor.white
         password.attributedPlaceholder = NSAttributedString(string:NSLocalizedString("PLACEHOLDER_PWD", comment: "password"),attributes:[NSForegroundColorAttributeName: whitePlaceholder])
+        
         //animations
-        UIView.animate(withDuration: 0.5, delay: 0.00, options: UIViewAnimationOptions(), animations: {
+        UIView.animate(withDuration: 0.25) { 
             email.layer.position.x += self.view.bounds.width
             password.layer.position.x += self.view.bounds.width
             separator.layer.position.x += self.view.bounds.width
-            self.view.layoutIfNeeded()
-            }, completion: nil)
-        UIView.animate(withDuration: 1.0, delay: 0.30, options: .curveEaseOut, animations: {
             signup.alpha = 1
-            policy.alpha = 1
-            
-            }, completion: nil)
+        }
     }
     
     @IBAction func didTapSignUp(_ sender: UIButton) {
-//        self.activitySpin.startAnimating()
+//        activitySpin.startAnimating()
 //        let email = emailField.text!
 //        let password = passwordField.text!
 //        if email.isEmpty || password.isEmpty { //error
@@ -91,8 +87,8 @@ class SignUpViewController: WooShotViewController, UITextFieldDelegate {
 //            // add "OK" button
 //            myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
 //            // show the alert
-//            self.present(myAlert, animated: true, completion: nil)
-//            self.activitySpin.stopAnimating()
+//            present(myAlert, animated: true, completion: nil)
+//            activitySpin.stopAnimating()
 //            
 //        } else { //auth ok
 //            FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
@@ -103,13 +99,13 @@ class SignUpViewController: WooShotViewController, UITextFieldDelegate {
 //                    // add "OK" button
 //                    myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
 //                    // show the alert
-//                    self.present(myAlert, animated: true, completion: nil)
-//                    self.activitySpin.stopAnimating()
+//                    present(myAlert, animated: true, completion: nil)
+//                    activitySpin.stopAnimating()
 //                    return
 //                }
 //                //let's go!
-//                self.activitySpin.stopAnimating()
-                self.performSegue(withIdentifier: "firstLaunch", sender: self)
+//                activitySpin.stopAnimating()
+                performSegue(withIdentifier: "firstLaunch", sender: self)
 //            }
 //        }
     }

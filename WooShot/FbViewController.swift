@@ -11,7 +11,7 @@ import UIKit
 class FbViewController: UIViewController {
 
     @IBAction func Dismiss(_ sender: AnyObject) {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

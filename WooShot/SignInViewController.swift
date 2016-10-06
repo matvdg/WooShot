@@ -13,36 +13,36 @@ class SignInViewController: WooShotViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.elements.layer.zPosition = 1
-        self.view.tintColor = UIColor.white
-        self.signInButton.isHidden = true
-        self.emailField.isHidden = true
-        self.separator.isHidden = true
-        self.passwordField!.isHidden = true
-        self.title = NSLocalizedString("LOGIN", comment: "logging in navbar title")
+        elements.layer.zPosition = 1
+        view.tintColor = UIColor.white
+        signInButton.isHidden = true
+        emailField.isHidden = true
+        separator.isHidden = true
+        passwordField!.isHidden = true
+        title = NSLocalizedString("LOGIN", comment: "logging in navbar title")
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.designAndAnimateButtons()
-        self.emailField.becomeFirstResponder()
+        designAndAnimateButtons()
+        emailField.becomeFirstResponder()
         if let user = FIRAuth.auth()?.currentUser {
-            self.signedIn(user)
+            signedIn(user)
         }
     }
     
     private func designAndAnimateButtons() {
         let whitePlaceholder = UIColor(white: 1, alpha: 0.54)
-        let login = self.signInButton!
-        let email = self.emailField!
-        let password = self.passwordField!
+        let login = signInButton!
+        let email = emailField!
+        let password = passwordField!
         let separator = self.separator!
         login.titleLabel?.adjustsFontSizeToFitWidth = true
         login.layer.cornerRadius = login.bounds.height/2
         login.backgroundColor = UIColor.white
         login.setTitleColor(Color.wooColor, for: .normal)
-        email.layer.position.x -= self.view.bounds.width
-        password.layer.position.x -= self.view.bounds.width
-        separator.layer.position.x -= self.view.bounds.width
+        email.layer.position.x -= view.bounds.width
+        password.layer.position.x -= view.bounds.width
+        separator.layer.position.x -= view.bounds.width
         login.alpha = 0
         separator.isHidden = false
         login.isHidden = false
@@ -54,17 +54,16 @@ class SignInViewController: WooShotViewController, UITextFieldDelegate {
         password.attributedPlaceholder = NSAttributedString(string:NSLocalizedString("PLACEHOLDER_PWD", comment: "password"),attributes:[NSForegroundColorAttributeName: whitePlaceholder])
         
         //animations
-        UIView.animate(withDuration: 0.5, delay: 0.00, options: UIViewAnimationOptions(), animations: {
+        UIView.animate(withDuration: 0.25) {
             email.layer.position.x += self.view.bounds.width
             password.layer.position.x += self.view.bounds.width
             separator.layer.position.x += self.view.bounds.width
-            self.view.layoutIfNeeded()
-            }, completion: nil)
-        UIView.animate(withDuration: 1.0, delay: 0.30, options: .curveEaseOut, animations: { login.alpha = 1 }, completion: nil)
+            login.alpha = 1
+        }
     }
    
     @IBAction func didTapSignIn(_ sender: UIButton) {
-        self.activitySpin.startAnimating()
+        activitySpin.startAnimating()
         // Sign In with credentials.
         let email = emailField.text!
         let password = passwordField.text!
@@ -75,8 +74,8 @@ class SignInViewController: WooShotViewController, UITextFieldDelegate {
             // add "OK" button
             myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             // show the alert
-            self.present(myAlert, animated: true, completion: nil)
-            self.activitySpin.stopAnimating()
+            present(myAlert, animated: true, completion: nil)
+            activitySpin.stopAnimating()
 
         } else {
             FIRAuth.auth()?.signIn(withEmail: email, password: password) { (user, error) in
@@ -151,7 +150,7 @@ class SignInViewController: WooShotViewController, UITextFieldDelegate {
     }
     
     func signedIn(_ user: FIRUser?) {
-        self.activitySpin.stopAnimating()
+        activitySpin.stopAnimating()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

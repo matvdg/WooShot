@@ -31,6 +31,7 @@ MALE_PREF = "Men";
 FEMALE_PREF = "Women";
 NEXT = "Next";
 PHOTO = "One last step: upload your photo and let's go!";
+PHOTO_ERROR = "You need to upload a photo to launch WooShot. Don't worry you'll be able to change it later on...";
 SOURCE_CAMERA = "Camera";
 SOURCE_LIBRARY = "Photo library";
 SOURCE_TITLE = "Pick a source for your photo:";

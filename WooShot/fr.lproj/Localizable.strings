@@ -31,6 +31,7 @@ MALE_PREF = "Des hommes";
 FEMALE_PREF = "Des femmes";
 NEXT = "Suivant";
 PHOTO = "Une petite photo de profil et c'est parti !";
+PHOTO_ERROR = "Tu dois mettre une photo (même provisoire, tu pourras la changer plus tard) pour démarrer WooShot";
 SOURCE_CAMERA = "Appareil photo";
 SOURCE_LIBRARY = "Bibliothèque de photos";
 SOURCE_TITLE = "Choisir une source pour votre photo :";

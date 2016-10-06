@@ -23,8 +23,8 @@ class HomeViewController: WooShotViewController {
         
         //view.addSubview(loginButton)
         super.viewDidLoad()
-        self.elements.layer.zPosition = 1
-        let nav = self.navigationController!.navigationBar
+        elements.layer.zPosition = 1
+        let nav = navigationController!.navigationBar
         nav.barTintColor = Color.wooColorDark
         nav.tintColor = UIColor.white
         nav.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
@@ -34,20 +34,20 @@ class HomeViewController: WooShotViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.designButtons()
+        designButtons()
     }
     
     private func designButtons() {
-        let layer = self.fbloginButton.layer
-        layer.cornerRadius = self.fbloginButton.frame.height / 2
-        self.fbloginButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        let layer = fbloginButton.layer
+        layer.cornerRadius = fbloginButton.frame.height / 2
+        fbloginButton.titleLabel?.adjustsFontSizeToFitWidth = true
 //        layer.shadowOffset = CGSize(width: -1, height: 1)
 //        layer.shadowColor = UIColor.black.cgColor
 //        layer.shadowOpacity = 0.5
-        let signUp = self.signUpButton!
+        let signUp = signUpButton!
         signUp.titleLabel?.adjustsFontSizeToFitWidth = true
-        self.loginButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        //self.loginButton.backgroundColor = Color.p600
+        loginButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        //loginButton.backgroundColor = Color.p600
 //        signUp.layer.borderWidth = 1
 //        signUp.layer.borderColor = UIColor.white.cgColor
 //        signUp.layer.cornerRadius = signUp.bounds.height/2
