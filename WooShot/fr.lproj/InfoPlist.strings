@@ -1,0 +1,11 @@
+/* 
+  InfoPlist.strings
+  WooShot
+
+  Created by Mathieu Vandeginste on 06/10/2016.
+  Copyright © 2016 WooShot. All rights reserved.
+*/
+
+NSLocationUsageDescription = "WooShot a besoin de votre position GPS pour vous géolocaliser près de nos établissements partenaires.";
+NSCameraUsageDescription = "WooShot a besoin d'utiliser la caméra pour prendre une photo de profil !";
+NSPhotoLibraryUsageDescription = "WooShot a besoin d'accéder à votre phototèque pour télécharger une photo de profil !";
