@@ -17,7 +17,7 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
     var lovesMen = false
     var lovesWomen = false
     let imagePicker = UIImagePickerController()
-
+    
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nextButton: UIButton!
@@ -60,7 +60,7 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
         self.nextButton.setTitle(NSLocalizedString("NEXT", comment: "next"), for: .normal)
         self.nameField.textColor = UIColor.white
         self.nameField.attributedPlaceholder = NSAttributedString(string:NSLocalizedString("PLACEHOLDER_NAME", comment: "name"),attributes:[NSForegroundColorAttributeName: UIColor(white: 1, alpha: 0.54)])
-
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -95,10 +95,8 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
             self.didCompleteSecondStep()
         case 2:
             self.didCompleteThirdStep()
-        default: break
-        }
-        
-
+            self.showSourceSelector()
+        default: break }
     }
     
     private func setDisplayName() {
@@ -118,7 +116,7 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
                 print(error.localizedDescription)
                 return
             }
-
+            
             print(user.email, user.displayName)
         }
     }
@@ -137,17 +135,37 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
             self.displayName = self.nameField.text!
             self.step += 1
             self.pageControl.currentPage = 1
-            self.greetings.text = "\(NSLocalizedString("GREAT", comment: "just great"))\(self.displayName)"
-            self.maleLabel.text = NSLocalizedString("MALE", comment: "male")
-            self.femaleLabel.text = NSLocalizedString("FEMALE", comment: "female")
-            self.genderLabel.text = NSLocalizedString("GENDER", comment: "gender question")
-            self.nameField.isHidden = true
-            self.maleLabel.isHidden = false
-            self.femaleLabel.isHidden = false
-            self.genderLabel.isHidden = false
-            self.genderStackView.isHidden = false
             self.nextButton.isHidden = true
-            self.nextButton.frame = CGRect(x: self.view.bounds.midX - 100, y: self.view.bounds.maxY - 100, width: 200, height: 50)
+            
+            //animations
+            UIView.animate(withDuration: 0.25, delay: 0.00, options: UIViewAnimationOptions(), animations: {
+                self.greetings.layer.position.x -= self.view.bounds.width
+                self.nameField.layer.position.x -= self.view.bounds.width
+            }) { done in
+                self.maleLabel.alpha = 0
+                self.femaleLabel.alpha = 0
+                self.genderStackView.alpha = 0
+                self.maleLabel.isHidden = false
+                self.femaleLabel.isHidden = false
+                self.genderLabel.isHidden = false
+                self.genderStackView.isHidden = false
+                self.nextButton.frame = CGRect(x: self.view.bounds.midX - 100, y: self.view.bounds.maxY - 100, width: 200, height: 50)
+                self.greetings.layer.position.x += self.view.bounds.width * 2
+                self.genderLabel.layer.position.x += self.view.bounds.width
+                self.genderLabel.isHidden = false
+                self.greetings.text = "\(NSLocalizedString("GREAT", comment: "just great"))\(self.displayName)"
+                self.nameField.isHidden = true
+                self.maleLabel.text = NSLocalizedString("MALE", comment: "male")
+                self.femaleLabel.text = NSLocalizedString("FEMALE", comment: "female")
+                self.genderLabel.text = NSLocalizedString("GENDER", comment: "gender question")
+                UIView.animate(withDuration: 0.25, animations: {
+                    self.greetings.layer.position.x -= self.view.bounds.width
+                    self.genderLabel.layer.position.x -= self.view.bounds.width
+                    self.maleLabel.alpha = 1
+                    self.femaleLabel.alpha = 1
+                    self.genderStackView.alpha = 1
+                })
+            }
         }
     }
     
@@ -155,6 +173,9 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
         self.step += 1
         self.pageControl.currentPage = 2
         self.greetings.isHidden = true
+        self.maleLabel.alpha = 0
+        self.femaleLabel.alpha = 0
+        self.genderStackView.alpha = 0
         self.maleLabel.text = NSLocalizedString("MALE_PREF", comment: "men")
         self.femaleLabel.text = NSLocalizedString("FEMALE_PREF", comment: "women")
         self.genderLabel.text = NSLocalizedString("GENDER_PREF", comment: "preferences question")
@@ -163,6 +184,19 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
         self.femaleButton.alpha = 0.5
         self.femaleLabel.alpha = 0.5
         self.nextButton.isHidden = true
+        
+        //animations
+        UIView.animate(withDuration: 0.25, animations: {
+            self.genderLabel.layer.position.x -= self.view.bounds.width
+        }) { (done) in
+            self.genderLabel.layer.position.x += self.view.bounds.width * 2
+            UIView.animate(withDuration: 0.25, animations: {
+                self.genderLabel.layer.position.x -= self.view.bounds.width
+                self.maleLabel.alpha = 1
+                self.femaleLabel.alpha = 1
+                self.genderStackView.alpha = 1
+            })
+        }
     }
     
     private func didCompleteThirdStep() {
@@ -177,31 +211,25 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
         } else {
             self.step += 1
             self.pageControl.currentPage = 3
+            self.greetings.layer.position.x += self.view.bounds.width
             self.greetings.text = NSLocalizedString("PHOTO", comment: "photo upload")
+            self.profileImage.alpha = 0
             self.profileImage.isHidden = false
             self.greetings.isHidden = false
-            self.genderLabel.isHidden = true
-            self.nameField.isHidden = true
             self.maleLabel.isHidden = true
             self.femaleLabel.isHidden = true
             self.genderStackView.isHidden = true
             self.nextButton.isHidden = true
             
-            let sourceSelector = UIAlertController(title: NSLocalizedString("SOURCE_TITLE", comment: "source text"), message: NSLocalizedString("SOURCE_MSG", comment: "source message"), preferredStyle: UIAlertControllerStyle.actionSheet)
-            sourceSelector.addAction(UIAlertAction(title: NSLocalizedString("SOURCE_CAMERA", comment: "upload from camera") , style: UIAlertActionStyle.default, handler: { (action) in
-                self.imagePicker.allowsEditing = true
-                self.imagePicker.sourceType = UIImagePickerControllerSourceType.camera
-                self.present(self.imagePicker, animated: true, completion: nil)
-
-            }))
-            sourceSelector.addAction(UIAlertAction(title: NSLocalizedString("SOURCE_LIBRARY", comment: "upload from library") , style: UIAlertActionStyle.default, handler: { (action) in
-                self.imagePicker.allowsEditing = true
-                self.imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-                self.present(self.imagePicker, animated: true, completion: nil)
-
-            }))
-                
-            self.present(sourceSelector, animated: true)
+            //animations
+            UIView.animate(withDuration: 0.25, animations: {
+                self.genderLabel.layer.position.x -= self.view.bounds.width
+            }) { (done) in
+                UIView.animate(withDuration: 0.25, animations: {
+                    self.greetings.layer.position.x -= self.view.bounds.width
+                    self.profileImage.alpha = 1
+                })
+            }
         }
     }
     
@@ -245,23 +273,35 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
     }
     
     private func showSourceSelector() {
+        let sourceSelector = UIAlertController(title: NSLocalizedString("SOURCE_TITLE", comment: "source text"), message: NSLocalizedString("SOURCE_MSG", comment: "source message"), preferredStyle: UIAlertControllerStyle.actionSheet)
         
+        sourceSelector.addAction(UIAlertAction(title: NSLocalizedString("SOURCE_CAMERA", comment: "upload from camera") , style: UIAlertActionStyle.default, handler: { (action) in
+            self.imagePicker.allowsEditing = true
+            self.imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }))
+        
+        sourceSelector.addAction(UIAlertAction(title: NSLocalizedString("SOURCE_LIBRARY", comment: "upload from library") , style: UIAlertActionStyle.default, handler: { (action) in
+            self.imagePicker.allowsEditing = true
+            self.imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }))
+        
+        self.present(sourceSelector, animated: true)
     }
-
     
-//    private func updateDisplayName(_ user: FIRUser) {
-//        let changeRequest = user.profileChangeRequest()
-//        changeRequest.displayName = user.email!.components(separatedBy: "@")[0]
-//        changeRequest.commitChanges(){ (error) in
-//            if let error = error {
-//                print(error.localizedDescription)
-//                return
-//            }
-//            
-//            print(user.email, user.displayName)
-//        }
-//    }
+    //unused - keep for later
+    private func updateDisplayName(_ user: FIRUser) {
+        let changeRequest = user.profileChangeRequest()
+        changeRequest.displayName = user.email!.components(separatedBy: "@")[0]
+        changeRequest.commitChanges(){ (error) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
 
+            print(user.email, user.displayName)
+        }
+    }
     
-
 }

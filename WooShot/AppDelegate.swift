@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 if granted {
                     //Do stuff here..
-                    print("notifications allowed by user")
+                    //print("notifications allowed by user")
                 }
                 else {
                     //Handle user denying permissions..
