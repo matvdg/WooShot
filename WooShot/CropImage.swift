@@ -13,8 +13,8 @@ extension UIImage
 {
     
     func getRoundedImage() -> UIImage {
-        let imageView: UIImageView = UIImageView(image: self.cropToSquare().resizeImage())
-        var layer: CALayer = CALayer()
+        let imageView = UIImageView(image: self.cropToSquare().resizeImage())
+        var layer = CALayer()
         layer = imageView.layer
         layer.masksToBounds = true
         layer.cornerRadius = imageView.image!.size.height/2
@@ -25,10 +25,9 @@ extension UIImage
         return roundedImage!
     }
     
-    func cropToSquare() -> UIImage {
+    private func cropToSquare() -> UIImage {
         
         let contextImage: UIImage = UIImage(cgImage: self.cgImage!)
-        
         let contextSize: CGSize = contextImage.size
         
         var posX: CGFloat = 0.0
@@ -59,7 +58,7 @@ extension UIImage
         
     }
     
-    func resizeImage() -> UIImage {
+    private func resizeImage() -> UIImage {
         let newWidth: CGFloat = 480
         let scale = newWidth / self.size.width
         let newHeight = self.size.height * scale

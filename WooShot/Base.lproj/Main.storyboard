@@ -755,10 +755,14 @@ Préalablement à toute utilisation l’Utilisateur devra reconnaître expressé
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="SQh-fA-Pi8" userLabel="profile">
+                                    <imageView hidden="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="SQh-fA-Pi8" userLabel="profile">
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="SQh-fA-Pi8" secondAttribute="height" multiplier="1:1" id="AME-tY-3H7"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="L9Y-St-RnY" appends="YES" id="mYm-Lf-uRd"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -811,6 +815,7 @@ Préalablement à toute utilisation l’Utilisateur devra reconnaître expressé
                         <outlet property="genderLabel" destination="EtF-6u-e7B" id="FUO-Oz-LJ3"/>
                         <outlet property="genderStackView" destination="dfK-j9-5Y9" id="cma-1g-Z8R"/>
                         <outlet property="greetings" destination="KZi-tw-m2r" id="aTN-8R-tyk"/>
+                        <outlet property="logoImage" destination="xJu-Dy-gx9" id="90M-RD-gnB"/>
                         <outlet property="maleButton" destination="xIu-fL-P9q" id="Nse-P5-TqA"/>
                         <outlet property="maleLabel" destination="qvS-zR-lnd" id="Sh8-a6-9aV"/>
                         <outlet property="nameField" destination="ZYP-u3-V3v" id="6PC-ro-4Ny"/>
@@ -820,6 +825,11 @@ Préalablement à toute utilisation l’Utilisateur devra reconnaître expressé
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z2C-fV-z3y" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="L9Y-St-RnY">
+                    <connections>
+                        <action selector="didTouchProfileImage:" destination="BJQ-Kw-Npa" id="Vop-yt-wad"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="871.5" y="503.5"/>
         </scene>

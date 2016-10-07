@@ -11,15 +11,16 @@ import Firebase
 
 class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var step = 0
-    var displayName: String = ""
-    var isMale: Bool?
-    var lovesMen = false
-    var lovesWomen = false
-    let imagePicker = UIImagePickerController()
+    private var step = 0
+    private var displayName: String = ""
+    private var isMale: Bool?
+    private var lovesMen = false
+    private var lovesWomen = false
+    private let imagePicker = UIImagePickerController()
     
     
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var greetings: UILabel!
     @IBOutlet weak var pageControl: UIPageControl!
@@ -45,6 +46,10 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
         showNextStep()
     }
     
+    @IBAction func didTouchProfileImage(_ sender: AnyObject) {
+        showSourceSelector()
+    }
+    
     //app cyclelife methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,11 +65,10 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
         nextButton.setTitle(NSLocalizedString("NEXT", comment: "next"), for: .normal)
         nameField.textColor = UIColor.white
         nameField.attributedPlaceholder = NSAttributedString(string:NSLocalizedString("PLACEHOLDER_NAME", comment: "name"),attributes:[NSForegroundColorAttributeName: UIColor(white: 1, alpha: 0.54)])
-        
+        nameField.becomeFirstResponder()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        nameField.becomeFirstResponder()
         nextButton.titleLabel?.adjustsFontSizeToFitWidth = true
         nextButton.layer.cornerRadius = nextButton.bounds.height/2
         nextButton.backgroundColor = UIColor.white
@@ -90,19 +94,13 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         profileImage.contentMode = .scaleAspectFit
         profileImage.image = chosenImage.getRoundedImage()
+        didCompleteLastStep()
         dismiss(animated:true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        // create alert controller
-        let myAlert = UIAlertController(title: NSLocalizedString("ERROR", comment: "error"), message: NSLocalizedString("PHOTO_ERROR", comment: "error"), preferredStyle: UIAlertControllerStyle.alert)
-        myAlert.view.tintColor = Color.wooColor
-        // add "OK" button
-        myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        // show the alert
-        present(myAlert, animated: true) { 
-            self.showSourceSelector()
-        }
+        dismiss(animated:true, completion: nil)
+        self.displayErrorAlertController(localizedString: NSLocalizedString("PHOTO_ERROR", comment: "photo error"))
     }
     
     //controller's logic methods
@@ -114,7 +112,9 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
             didCompleteSecondStep()
         case 2:
             didCompleteThirdStep()
-            showSourceSelector()
+        case 3:
+            //the end
+            print("end of tuto")
         default: break }
     }
     
@@ -126,10 +126,10 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
         changeRequest.commitChanges(){ (error) in
             if let error = error {
                 // create alert controller
-                let myAlert = UIAlertController(title: NSLocalizedString("ERROR", comment: "error"), message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                let myAlert = UIAlertController(title: NSLocalizedString("ERROR", comment: "error"), message: error.localizedDescription, preferredStyle: .alert)
                 myAlert.view.tintColor = Color.wooColor
                 // add "OK" button
-                myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                myAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 // show the alert
                 self.present(myAlert, animated: true, completion: nil)
                 print(error.localizedDescription)
@@ -142,13 +142,7 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
     
     private func didCompleteFirstStep() {
         if (nameField.text?.isEmpty)! { //error
-            // create alert controller
-            let myAlert = UIAlertController(title: NSLocalizedString("ERROR", comment: "error"), message: NSLocalizedString("NAME_ERROR", comment: "name error"), preferredStyle: UIAlertControllerStyle.alert)
-            myAlert.view.tintColor = Color.wooColor
-            // add "OK" button
-            myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-            // show the alert
-            present(myAlert, animated: true, completion: nil)
+            displayErrorAlertController(localizedString: NSLocalizedString("NAME_ERROR", comment: "name error"))
         } else { //name ok
             nameField.resignFirstResponder()
             displayName = nameField.text!
@@ -220,14 +214,9 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
     
     private func didCompleteThirdStep() {
         if !(lovesWomen || lovesMen) { //error
-            // create alert controller
-            let myAlert = UIAlertController(title: NSLocalizedString("ERROR", comment: "error"), message: NSLocalizedString("PREF_ERROR", comment: "pref error unselected"), preferredStyle: UIAlertControllerStyle.alert)
-            myAlert.view.tintColor = Color.wooColor
-            // add "OK" button
-            myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-            // show the alert
-            present(myAlert, animated: true, completion: nil)
+            displayErrorAlertController(localizedString: NSLocalizedString("PREF_ERROR", comment: "pref error unselected"))
         } else {
+            showSourceSelector()
             step += 1
             pageControl.currentPage = 3
             greetings.layer.position.x += view.bounds.width
@@ -250,6 +239,13 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
                 })
             }
         }
+    }
+    
+    private func didCompleteLastStep() {
+        self.logoImage.image = UIImage(named: "cheers")
+        self.greetings.text = NSLocalizedString("PHOTO_END", comment: "photo upload done")
+        self.nextButton.setTitle(NSLocalizedString("TUTO_END", comment: "the end"), for: .normal)
+        nextButton.isHidden = false
     }
     
     private func selectSex(isMale: Bool) {
@@ -292,9 +288,9 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
     }
     
     private func showSourceSelector() {
-        let sourceSelector = UIAlertController(title: NSLocalizedString("SOURCE_TITLE", comment: "source text"), message: NSLocalizedString("SOURCE_MSG", comment: "source message"), preferredStyle: UIAlertControllerStyle.actionSheet)
+        let sourceSelector = UIAlertController(title: NSLocalizedString("SOURCE_TITLE", comment: "source text"), message: NSLocalizedString("SOURCE_MSG", comment: "source message"), preferredStyle: .actionSheet)
         
-        sourceSelector.addAction(UIAlertAction(title: NSLocalizedString("SOURCE_CAMERA", comment: "upload from camera") , style: UIAlertActionStyle.default, handler: { (action) in
+        sourceSelector.addAction(UIAlertAction(title: NSLocalizedString("SOURCE_CAMERA", comment: "upload from camera") , style: .default, handler: { (action) in
             self.imagePicker.allowsEditing = true
             self.imagePicker.delegate = self
             self.imagePicker.sourceType = .camera
@@ -302,14 +298,28 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
             self.present(self.imagePicker, animated: true, completion: nil)
         }))
         
-        sourceSelector.addAction(UIAlertAction(title: NSLocalizedString("SOURCE_LIBRARY", comment: "upload from library") , style: UIAlertActionStyle.default, handler: { (action) in
+        sourceSelector.addAction(UIAlertAction(title: NSLocalizedString("SOURCE_LIBRARY", comment: "upload from library") , style: .default, handler: { (action) in
             self.imagePicker.allowsEditing = true
             self.imagePicker.delegate = self
             self.imagePicker.sourceType = .photoLibrary
             self.present(self.imagePicker, animated: true, completion: nil)
         }))
         
+        sourceSelector.addAction(UIAlertAction(title: NSLocalizedString("CANCEL", comment: "dismiss") , style: .cancel, handler: { (action) in
+            self.displayErrorAlertController(localizedString: NSLocalizedString("PHOTO_ERROR", comment: "photo error"))
+        }))
+        
         present(sourceSelector, animated: true)
+    }
+    
+    private func displayErrorAlertController(localizedString: String) {
+        // create alert controller
+        let myAlert = UIAlertController(title: NSLocalizedString("ERROR", comment: "error"), message: localizedString, preferredStyle: UIAlertControllerStyle.alert)
+        myAlert.view.tintColor = Color.wooColor
+        // add "OK" button
+        myAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        // show the alert
+        present(myAlert, animated: true)
     }
     
     //unused - keep for later
