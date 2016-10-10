@@ -113,8 +113,7 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
         case 2:
             didCompleteThirdStep()
         case 3:
-            //the end
-            print("end of tuto")
+            performSegue(withIdentifier: "launchApp", sender: self)
         default: break }
     }
     
@@ -162,7 +161,7 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
                 self.femaleLabel.isHidden = false
                 self.genderLabel.isHidden = false
                 self.genderStackView.isHidden = false
-                self.nextButton.frame = CGRect(x: self.view.bounds.midX - 100, y: self.view.bounds.maxY - 100, width: 200, height: 50)
+                self.nextButton.frame = CGRect(x: self.view.bounds.midX - 100, y: self.view.bounds.maxY - 100, width: 200, height: 40)
                 self.greetings.layer.position.x += self.view.bounds.width * 2
                 self.genderLabel.layer.position.x += self.view.bounds.width
                 self.genderLabel.isHidden = false

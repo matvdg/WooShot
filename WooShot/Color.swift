@@ -14,6 +14,8 @@ class Color {
     static let wooColor = UIColor(netHex: 0xE91E63)
     //a700 #C51162
     static let wooColorDark = UIColor(netHex: 0xC51162)
+    static let blueBackground = UIColor(red: 5, green: 13, blue: 37)
+    
     static let a200 = UIColor(netHex: 0xFF4081)
     static let p600 = UIColor(netHex: 0xD81B60)
     static let p50 = UIColor(netHex: 0xFCE4EC)

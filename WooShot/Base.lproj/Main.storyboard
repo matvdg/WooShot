@@ -52,7 +52,7 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="dF0-mk-QL8"/>
-                                            <constraint firstAttribute="height" constant="50" id="eaP-gf-g6s"/>
+                                            <constraint firstAttribute="height" constant="40" id="eaP-gf-g6s"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="Log in">
@@ -130,6 +130,7 @@
                         <outlet property="resetPwdButton" destination="H5Y-A7-hI1" id="48Y-yO-4qQ"/>
                         <outlet property="separator" destination="4Uq-W1-qhC" id="sj1-R1-KdA"/>
                         <outlet property="signInButton" destination="JHm-bs-cdE" id="gkZ-AG-CNi"/>
+                        <segue destination="o4I-Wb-Mlt" kind="modal" identifier="launchApp" modalTransitionStyle="flipHorizontal" id="UjL-iY-1cM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -175,7 +176,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmE-4l-Rdr" userLabel="fblogin">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="1Eh-Le-YPD"/>
+                                            <constraint firstAttribute="height" constant="40" id="1Eh-Le-YPD"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
@@ -386,7 +387,7 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="n2e-QY-V76"/>
-                                            <constraint firstAttribute="height" constant="50" id="uIh-CL-Ykj"/>
+                                            <constraint firstAttribute="height" constant="40" id="uIh-CL-Ykj"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="Sign up">
@@ -694,7 +695,7 @@ Préalablement à toute utilisation l’Utilisateur devra reconnaître expressé
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="kat-48-1r1"/>
-                                            <constraint firstAttribute="height" constant="50" id="lwV-tl-BA5"/>
+                                            <constraint firstAttribute="height" constant="40" id="lwV-tl-BA5"/>
                                         </constraints>
                                         <state key="normal" title="Next"/>
                                         <connections>
@@ -822,6 +823,7 @@ Préalablement à toute utilisation l’Utilisateur devra reconnaître expressé
                         <outlet property="nextButton" destination="Qbw-Vs-QV5" id="6Qk-yB-Xln"/>
                         <outlet property="pageControl" destination="WeP-b5-c1u" id="jbj-Zl-vma"/>
                         <outlet property="profileImage" destination="SQh-fA-Pi8" id="dYk-HU-Opx"/>
+                        <segue destination="o4I-Wb-Mlt" kind="modal" identifier="launchApp" modalTransitionStyle="flipHorizontal" id="qgg-d4-ETm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z2C-fV-z3y" sceneMemberID="firstResponder"/>
@@ -833,11 +835,191 @@ Préalablement à toute utilisation l’Utilisateur devra reconnaître expressé
             </objects>
             <point key="canvasLocation" x="871.5" y="503.5"/>
         </scene>
+        <!--Main View Controller-->
+        <scene sceneID="dp2-Lg-ebz">
+            <objects>
+                <viewController id="o4I-Wb-Mlt" customClass="MainViewController" customModule="WooShot" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NJI-JH-Bla"/>
+                        <viewControllerLayoutGuide type="bottom" id="gwO-CP-hBC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kn2-ZG-4z6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kzh-Oi-oGs">
+                                <subviews>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maps" translatesAutoresizingMaskIntoConstraints="NO" id="drG-EH-uUt" userLabel="maps">
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="c2X-0n-L4u" appends="YES" id="J8l-hs-uT3"/>
+                                        </connections>
+                                    </imageView>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white" translatesAutoresizingMaskIntoConstraints="NO" id="YT3-L4-qHq" userLabel="main">
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="zc5-is-B0s" appends="YES" id="zf7-B4-bFv"/>
+                                        </connections>
+                                    </imageView>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="u8Z-e2-2zQ" userLabel="profile">
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="w8C-H0-HSQ" appends="YES" id="Esr-Bo-yx9"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="JIb-qK-kZv"/>
+                                </constraints>
+                            </stackView>
+                            <collectionView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="y6q-uJ-s1G">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="y6q-uJ-s1G" secondAttribute="height" multiplier="335:312" id="UrN-w8-F8y"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hUb-8W-kVq">
+                                    <size key="itemSize" width="336" height="312"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photo" id="AIa-G6-pXY" customClass="PhotoCollectionViewCell" customModule="WooShot" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="336" height="312"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="336" height="312"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8SS-qW-l3R">
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <gestureRecognizers/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wmd-Dg-zUP">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="Wmd-Dg-zUP" firstAttribute="leading" secondItem="AIa-G6-pXY" secondAttribute="leading" id="EDg-8f-bH8"/>
+                                            <constraint firstAttribute="trailing" secondItem="Wmd-Dg-zUP" secondAttribute="trailing" id="TJh-DX-wDN"/>
+                                            <constraint firstItem="Wmd-Dg-zUP" firstAttribute="top" secondItem="8SS-qW-l3R" secondAttribute="bottom" id="WRq-sX-Nk6"/>
+                                            <constraint firstAttribute="trailing" secondItem="8SS-qW-l3R" secondAttribute="trailing" id="cei-IT-N7c"/>
+                                            <constraint firstItem="8SS-qW-l3R" firstAttribute="top" secondItem="AIa-G6-pXY" secondAttribute="top" id="lfh-hD-q4O"/>
+                                            <constraint firstAttribute="bottom" secondItem="Wmd-Dg-zUP" secondAttribute="bottom" id="vUu-bd-VJQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="8SS-qW-l3R" secondAttribute="bottom" constant="40" id="xnp-XO-6ci"/>
+                                            <constraint firstItem="8SS-qW-l3R" firstAttribute="leading" secondItem="AIa-G6-pXY" secondAttribute="leading" id="zfY-ln-PjA"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="image" destination="8SS-qW-l3R" id="XA8-ko-RHI"/>
+                                            <outlet property="name" destination="Wmd-Dg-zUP" id="H6e-8U-VSk"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="o4I-Wb-Mlt" id="Nmt-9T-7gN"/>
+                                    <outlet property="delegate" destination="o4I-Wb-Mlt" id="tBo-bJ-xjh"/>
+                                    <outletCollection property="gestureRecognizers" destination="YtH-Fm-Xei" appends="YES" id="fIX-G1-Wjb"/>
+                                    <outletCollection property="gestureRecognizers" destination="Nzg-Mx-v29" appends="YES" id="H9J-PE-6ou"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Roc-zR-gak" userLabel="next">
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.1176470588" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Bx2-rA-JQU"/>
+                                    <constraint firstAttribute="height" constant="40" id="dWc-k4-gap"/>
+                                    <constraint firstAttribute="width" constant="200" id="g4N-E0-KKY"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="jTI-yR-E6e"/>
+                                </constraints>
+                                <state key="normal" title="     Share a drink" image="drink">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextStep:" destination="BJQ-Kw-Npa" eventType="touchUpInside" id="1M8-iN-AbG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.019607843137254902" green="0.050980392156862744" blue="0.14509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Roc-zR-gak" firstAttribute="centerX" secondItem="kn2-ZG-4z6" secondAttribute="centerX" id="7IV-gX-u9n"/>
+                            <constraint firstAttribute="trailing" secondItem="kzh-Oi-oGs" secondAttribute="trailing" constant="20" id="EP6-cP-dE5"/>
+                            <constraint firstItem="gwO-CP-hBC" firstAttribute="top" secondItem="Roc-zR-gak" secondAttribute="bottom" constant="20" id="FXH-uk-BrL"/>
+                            <constraint firstItem="y6q-uJ-s1G" firstAttribute="centerY" secondItem="kn2-ZG-4z6" secondAttribute="centerY" id="FxZ-ph-APM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="y6q-uJ-s1G" secondAttribute="trailing" constant="4" id="MZC-9Y-mVQ"/>
+                            <constraint firstItem="kzh-Oi-oGs" firstAttribute="leading" secondItem="kn2-ZG-4z6" secondAttribute="leading" constant="20" id="lCf-CR-c0x"/>
+                            <constraint firstItem="y6q-uJ-s1G" firstAttribute="leading" secondItem="kn2-ZG-4z6" secondAttribute="leadingMargin" constant="4" id="r6O-Wd-Kch"/>
+                            <constraint firstItem="kzh-Oi-oGs" firstAttribute="top" secondItem="NJI-JH-Bla" secondAttribute="bottom" constant="20" id="umF-aQ-zLo"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="04s-3A-3Lc" appends="YES" id="QVS-gb-NnB"/>
+                            <outletCollection property="gestureRecognizers" destination="Nju-gg-iTA" appends="YES" id="MYH-6u-Vdf"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="1WS-vb-QjO"/>
+                    <connections>
+                        <outlet property="main" destination="YT3-L4-qHq" id="Ipt-ET-QMv"/>
+                        <outlet property="maps" destination="drG-EH-uUt" id="Fz9-eP-qhT"/>
+                        <outlet property="photoCollection" destination="y6q-uJ-s1G" id="3BZ-a1-ygC"/>
+                        <outlet property="profile" destination="u8Z-e2-2zQ" id="uLl-qC-4Wg"/>
+                        <outlet property="shareDrink" destination="Roc-zR-gak" id="kUb-4h-H0w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xnj-SJ-Ytw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZER-Rq-ikW">
+                    <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                </button>
+                <tapGestureRecognizer id="c2X-0n-L4u" userLabel="maps">
+                    <connections>
+                        <action selector="didTouchMaps:" destination="o4I-Wb-Mlt" id="LWF-B2-5Le"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="w8C-H0-HSQ" userLabel="profile">
+                    <connections>
+                        <action selector="didTouchProfile:" destination="o4I-Wb-Mlt" id="KXD-bM-5wZ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="zc5-is-B0s" userLabel="main">
+                    <connections>
+                        <action selector="didTouchMain:" destination="o4I-Wb-Mlt" id="YM3-dz-bth"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="04s-3A-3Lc" userLabel="swipeViewRight">
+                    <connections>
+                        <action selector="didSwipeRight:" destination="o4I-Wb-Mlt" id="u8i-gc-lKC"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="Nju-gg-iTA" userLabel="swipeViewLeft">
+                    <connections>
+                        <action selector="didSwipeLeft:" destination="o4I-Wb-Mlt" id="0p1-Es-gyw"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="YtH-Fm-Xei" userLabel="swipePhotoLeft">
+                    <connections>
+                        <action selector="didSwipePhotoLeft:" destination="o4I-Wb-Mlt" id="c1q-AK-cF3"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="Nzg-Mx-v29" userLabel="swipePhotoRight">
+                    <connections>
+                        <action selector="didSwipePhotoRight:" destination="o4I-Wb-Mlt" id="NCI-BS-Yq1"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1530.5" y="503.5"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="drink" width="20" height="20"/>
         <image name="fb" width="20" height="20"/>
         <image name="female" width="100" height="100"/>
         <image name="male" width="100" height="100"/>
+        <image name="maps" width="100" height="100"/>
         <image name="profile" width="100" height="100"/>
         <image name="white" width="250" height="174"/>
     </resources>
@@ -847,10 +1029,11 @@ Préalablement à toute utilisation l’Utilisateur devra reconnaître expressé
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="RHM-yr-z7t"/>
         <segue reference="igT-ze-Ilp"/>
         <segue reference="Rq2-er-SaI"/>
+        <segue reference="RHM-yr-z7t"/>
         <segue reference="anI-vn-ctl"/>
+        <segue reference="qgg-d4-ETm"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.7725490196" green="0.066666666669999999" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

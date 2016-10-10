@@ -14,7 +14,10 @@
 		F67344011D9957680010311B /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67344001D9957680010311B /* PolicyViewController.swift */; };
 		F68557431DA6853100C1384B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F68557451DA6853100C1384B /* InfoPlist.strings */; };
 		F6894D1D1DA6900E00C8D2E8 /* CropImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6894D1C1DA6900E00C8D2E8 /* CropImage.swift */; };
+		F69A1A271DABE723003053B8 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69A1A261DABE723003053B8 /* Person.swift */; };
+		F69A1A2A1DABEA33003053B8 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69A1A291DABEA33003053B8 /* PhotoCollectionViewCell.swift */; };
 		F69FEF321D83054A003EEFA2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69FEF311D83054A003EEFA2 /* HomeViewController.swift */; };
+		F6A0D6ED1DABA93B00927920 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A0D6EC1DABA93B00927920 /* MainViewController.swift */; };
 		F6B60FDD1D82EEF60046D3ED /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B60FDC1D82EEF60046D3ED /* Color.swift */; };
 		F6C4728F1D83262400D42320 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C4728E1D83262400D42320 /* SignUpViewController.swift */; };
 		F6C472911D83264100D42320 /* FbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C472901D83264100D42320 /* FbViewController.swift */; };
@@ -40,7 +43,10 @@
 		F68557461DA6853A00C1384B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F6894D1C1DA6900E00C8D2E8 /* CropImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropImage.swift; sourceTree = "<group>"; };
 		F690FA351D903DD4006CB064 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		F69A1A261DABE723003053B8 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		F69A1A291DABEA33003053B8 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		F69FEF311D83054A003EEFA2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = HomeViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		F6A0D6EC1DABA93B00927920 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F6B60FDC1D82EEF60046D3ED /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		F6C4728E1D83262400D42320 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F6C472901D83264100D42320 /* FbViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = FbViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -87,6 +93,7 @@
 		F641AA9E1D8832FD00BC07C8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F69A1A261DABE723003053B8 /* Person.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -100,6 +107,7 @@
 				F67344001D9957680010311B /* PolicyViewController.swift */,
 				F6C4728E1D83262400D42320 /* SignUpViewController.swift */,
 				F637537B1D9A98BC00EA3ACC /* TutorialViewController.swift */,
+				F6A0D6EC1DABA93B00927920 /* MainViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -113,6 +121,7 @@
 				F6B60FDC1D82EEF60046D3ED /* Color.swift */,
 				F6894D1C1DA6900E00C8D2E8 /* CropImage.swift */,
 				F6DEEF8C1D8FF387003869B5 /* WooShotViewController.swift */,
+				F69A1A291DABEA33003053B8 /* PhotoCollectionViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -311,10 +320,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F66911041D2DDF060000A447 /* SignInViewController.swift in Sources */,
+				F69A1A2A1DABEA33003053B8 /* PhotoCollectionViewCell.swift in Sources */,
+				F6A0D6ED1DABA93B00927920 /* MainViewController.swift in Sources */,
 				F637537C1D9A98BC00EA3ACC /* TutorialViewController.swift in Sources */,
 				F6DEEF8D1D8FF387003869B5 /* WooShotViewController.swift in Sources */,
 				F6894D1D1DA6900E00C8D2E8 /* CropImage.swift in Sources */,
 				F6F060F71D2DA1E400063049 /* AppDelegate.swift in Sources */,
+				F69A1A271DABE723003053B8 /* Person.swift in Sources */,
 				F6B60FDD1D82EEF60046D3ED /* Color.swift in Sources */,
 				F69FEF321D83054A003EEFA2 /* HomeViewController.swift in Sources */,
 				F67344011D9957680010311B /* PolicyViewController.swift in Sources */,

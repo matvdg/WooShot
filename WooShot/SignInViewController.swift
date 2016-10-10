@@ -63,7 +63,8 @@ class SignInViewController: WooShotViewController, UITextFieldDelegate {
     }
    
     @IBAction func didTapSignIn(_ sender: UIButton) {
-        activitySpin.startAnimating()
+        performSegue(withIdentifier: "launchApp", sender: self)
+        /*activitySpin.startAnimating()
         // Sign In with credentials.
         let email = emailField.text!
         let password = passwordField.text!
@@ -92,7 +93,7 @@ class SignInViewController: WooShotViewController, UITextFieldDelegate {
                 }
                 self.signedIn(user!)
             }
-        }
+        }*/
     }
     
     @IBAction func didRequestPasswordReset(_ sender: UIButton) {
