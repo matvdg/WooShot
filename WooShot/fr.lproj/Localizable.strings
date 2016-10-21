@@ -6,6 +6,7 @@
   Copyright © 2016 WooShot. All rights reserved.
 */
 
+//LOGIN
 RESET_PWD_TITLE="Mot de passe oublié ?";
 RESET_PWD_MSG="Si tu as perdu ton mot de passe, un e-mail te seras envoyé pour réinitialiser ton mot de passe. Tape ici ton e-mail :";
 RESET_PWD_SENT_TITLE="Email envoyé !";
@@ -19,12 +20,15 @@ EMPTY = "Un champ est vide !";
 SLOGAN = "Tu vas passer une très bonne soirée !";
 PLACEHOLDER_EMAIL = "Adresse e-mail";
 PLACEHOLDER_PWD = "Mot de passe";
+
+//TUTORIAL
 PLACEHOLDER_NAME = "je m'appelle";
 GREETINGS = "Salut ! Comment tu t'appelles ?";
 GREAT = "Super, ";
 GENDER = "Es-tu un homme ou une femme ?";
-MALE = "Un homme";
-FEMALE = "Une femme";
+PROFILE_SEX = "Je suis ";
+MALE = "un homme";
+FEMALE = "une femme";
 NAME_ERROR = "Tu dois écrire un prénom ou un pseudo pour utiliser WooShot...";
 PREF_ERROR = "Pour utiliser WooShot, il te faut vouloir rencontrer des hommes ou des femmes... ou les deux !";
 GENDER_PREF = "Tu veux rencontrer :";
@@ -39,3 +43,16 @@ SOURCE_CAMERA = "Appareil photo";
 SOURCE_LIBRARY = "Bibliothèque de photos";
 SOURCE_TITLE = "Choisir une source pour votre photo :";
 SOURCE_MSG = "Pas d'inquiétude, tu pourras changer la photo à nouveau ultérieurement...";
+
+//PROFILE
+PROFILE_SEX_HEADER = "Je suis :";
+PROFILE_PREF_HEADER = "Je veux rencontrer :";
+PROFILE_SEX_MALE = "Un homme";
+PROFILE_SEX_FEMALE = "Une femme";
+PROFILE_PREF_MALE = "Des hommes";
+PROFILE_PREF_FEMALE = "Des femmes";
+PROFILE_HELP = "Aide";
+PROFILE_SIGN_OFF = "Supprimer mon compte";
+POLICY = "Conditions d'utilisation et confidentialité";
+LOGOUT = "Se déconnecter";
+

@@ -16,6 +16,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var main: UIImageView!
     @IBOutlet weak var profile: UIImageView!
     @IBOutlet weak var shareDrink: UIButton!
+    @IBOutlet weak var mapsVC: UIView!
+    @IBOutlet weak var profileVC: UIView!
     
     enum section {
         case maps
@@ -23,7 +25,16 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         case profile
     }
     
-    var demo = [Person(name: "Julie", imageUrl: "girl1"), Person(name: "Lola", imageUrl: "girl2"), Person(name: "Aurélia", imageUrl: "girl3"), Person(name: "Alicia", imageUrl: "girl4"), Person(name: "Candice", imageUrl: "girl5"), Person(name: "Soraya", imageUrl: "girl6"), Person(name: "Mélissa", imageUrl: "girl7"), Person(name: "Clara", imageUrl: "girl8") ]
+    var demo = [
+        User(displayName: "Julie", imageUrl: "girl1"),
+        User(displayName: "Lola", imageUrl: "girl2"),
+        User(displayName: "Aurélia", imageUrl: "girl3"),
+        User(displayName: "Alicia", imageUrl: "girl4"),
+        User(displayName: "Candice", imageUrl: "girl5"),
+        User(displayName: "Soraya", imageUrl: "girl6"),
+        User(displayName: "Mélissa", imageUrl: "girl7"),
+        User(displayName: "Clara", imageUrl: "girl8")
+    ]
     
     var currentSection = section.main
     let scale: CGFloat = 0.7
@@ -47,8 +58,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     private func designButton() {
-        shareDrink.titleLabel?.adjustsFontSizeToFitWidth = true
-        shareDrink.layer.cornerRadius = shareDrink.bounds.height/2
         shareDrink.backgroundColor = Color.wooColor
         shareDrink.setTitleColor(UIColor.white, for: .normal)
         shareDrink.isHidden = false
@@ -57,9 +66,12 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     private func displaySection(section: section) {
         switch section {
         case .maps:
+            self.profileVC.isHidden = true
+            self.mapsVC.alpha = 0
+            self.mapsVC.isHidden = false
             self.currentSection = .maps
             UIView.animate(withDuration: 0.25, animations: {
-                
+                self.mapsVC.alpha = 1
                 self.main.alpha = 0.3
                 self.maps.alpha = 1
                 self.profile.alpha = 0.3
@@ -69,17 +81,23 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             })
 
         case .profile:
+            self.mapsVC.isHidden = true
+            self.profileVC.alpha = 0
+            self.profileVC.isHidden = false
             self.currentSection = .profile
             UIView.animate(withDuration: 0.25, animations: {
                 self.main.alpha = 0.3
                 self.maps.alpha = 0.3
                 self.profile.alpha = 1
+                self.profileVC.alpha = 1
                 self.maps.transform = CGAffineTransform(scaleX: self.scale, y: self.scale)
                 self.main.transform = CGAffineTransform(scaleX: self.scale, y: self.scale)
                 self.profile.transform = CGAffineTransform(scaleX: 1, y: 1)
             })
         case .main:
             self.currentSection = .main
+            self.mapsVC.isHidden = true
+            self.profileVC.isHidden = true
             UIView.animate(withDuration: 0.25, animations: {
                 self.main.alpha = 1
                 self.maps.alpha = 0.3
@@ -87,8 +105,19 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 self.maps.transform = CGAffineTransform(scaleX: self.scale, y: self.scale)
                 self.main.transform = CGAffineTransform(scaleX: 1, y: 1)
                 self.profile.transform = CGAffineTransform(scaleX: self.scale, y: self.scale)
+                
             })
         }
+    }
+    
+    private func displayErrorAlertController(localizedString: String) {
+        // create alert controller
+        let myAlert = UIAlertController(title: NSLocalizedString("ERROR", comment: "error"), message: localizedString, preferredStyle: UIAlertControllerStyle.alert)
+        myAlert.view.tintColor = Color.wooColor
+        // add "OK" button
+        myAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        // show the alert
+        present(myAlert, animated: true)
     }
     
     @IBAction func didSwipeLeft(_ sender: UISwipeGestureRecognizer) {
@@ -153,12 +182,19 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photo", for: indexPath) as? PhotoCollectionViewCell else { return UICollectionViewCell() }
         let imageUrl = demo[indexPath.row].imageUrl
-        let name = demo[indexPath.row].name
-        
+        let name = demo[indexPath.row].displayName
         cell.image.image = UIImage(named: imageUrl)?.getRoundedImage()
         cell.name.text = name
         
         return cell
+    }
+    
+    //privacy methods
+    private func askForNotifications() {
+            }
+    
+    private func askForLocalization() {
+        
     }
     
 }

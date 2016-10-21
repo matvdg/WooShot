@@ -6,6 +6,7 @@
   Copyright © 2016 WooShot. All rights reserved.
 */
 
+//LOGIN
 RESET_PWD_TITLE="Reset your password?";
 RESET_PWD_MSG="If you forgot your password, an email will be sent to help you reset your password. Please type your email:";
 RESET_PWD_SENT_TITLE="Email sent!";
@@ -19,6 +20,8 @@ EMPTY = "A field is empty!";
 SLOGAN = "You're gonna enjoy your night !";
 PLACEHOLDER_EMAIL = "Email address";
 PLACEHOLDER_PWD = "Password";
+
+//TUTORIAL
 PLACEHOLDER_NAME = "my name is";
 GREETINGS = "Hi! What's your name?";
 GREAT = "Great, ";
@@ -39,3 +42,15 @@ SOURCE_CAMERA = "Camera";
 SOURCE_LIBRARY = "Photo library";
 SOURCE_TITLE = "Pick a source for your photo:";
 SOURCE_MSG = "Don't worry, you'll be able to change your photo again later on...";
+
+//PROFILE
+PROFILE_SEX_HEADER = "I am:";
+PROFILE_PREF_HEADER = "I wanna meet:";
+PROFILE_SEX_MALE = "A man";
+PROFILE_SEX_FEMALE = "A woman";
+PROFILE_PREF_MALE = "Men";
+PROFILE_PREF_FEMALE = "Women";
+PROFILE_HELP = "Help";
+PROFILE_SIGN_OFF = "Sign off my account";
+POLICY = "Terms and privacy";
+LOGOUT = "Log out";

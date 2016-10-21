@@ -47,9 +47,6 @@ class SignUpViewController: WooShotViewController, UITextFieldDelegate {
         let password = passwordField!
         let separator = self.separator!
         let policy = confidentiality!
-        
-        signup.titleLabel?.adjustsFontSizeToFitWidth = true
-        signup.layer.cornerRadius = signup.bounds.height/2
         signup.backgroundColor = UIColor.white
         signup.setTitleColor(Color.wooColor, for: .normal)
         email.layer.position.x -= view.bounds.width
@@ -62,6 +59,7 @@ class SignUpViewController: WooShotViewController, UITextFieldDelegate {
         password.isHidden = false
         separator.isHidden = false
         policy.isHidden = false
+        policy.setTitle(NSLocalizedString("POLICY", comment: ""), for: .normal)
         email.attributedPlaceholder = NSAttributedString(string:NSLocalizedString("PLACEHOLDER_EMAIL", comment: "email"),attributes:[NSForegroundColorAttributeName: whitePlaceholder])
         email.textColor = UIColor.white
         password.textColor = UIColor.white
@@ -73,6 +71,7 @@ class SignUpViewController: WooShotViewController, UITextFieldDelegate {
             password.layer.position.x += self.view.bounds.width
             separator.layer.position.x += self.view.bounds.width
             signup.alpha = 1
+            policy.alpha = 1
         }
     }
     

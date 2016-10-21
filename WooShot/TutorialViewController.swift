@@ -17,11 +17,13 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
     private var lovesMen = false
     private var lovesWomen = false
     private let imagePicker = UIImagePickerController()
+    private var imageSet = false
     
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var nextButtonBottom: AppleMusicButton!
     @IBOutlet weak var greetings: UILabel!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var elements: UIView!
@@ -60,19 +62,21 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
         femaleLabel.isHidden = true
         elements.layer.zPosition = 1
         nextButton.isHidden = true
+        nextButtonBottom.isHidden = true
         view.tintColor = UIColor.white
         greetings.text = NSLocalizedString("GREETINGS", comment: "greetings")
         nextButton.setTitle(NSLocalizedString("NEXT", comment: "next"), for: .normal)
+        nextButtonBottom.setTitle(NSLocalizedString("NEXT", comment: "next"), for: .normal)
+        
         nameField.textColor = UIColor.white
         nameField.attributedPlaceholder = NSAttributedString(string:NSLocalizedString("PLACEHOLDER_NAME", comment: "name"),attributes:[NSForegroundColorAttributeName: UIColor(white: 1, alpha: 0.54)])
         nameField.becomeFirstResponder()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        nextButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        nextButton.layer.cornerRadius = nextButton.bounds.height/2
         nextButton.backgroundColor = UIColor.white
         nextButton.setTitleColor(Color.wooColor, for: .normal)
+        nextButtonBottom.setTitleColor(Color.wooColor, for: .normal)
         nextButton.layer.zPosition = 10
     }
     
@@ -92,14 +96,15 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
     //UIImagePickerControllerDelegate methods
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        profileImage.contentMode = .scaleAspectFit
-        profileImage.image = chosenImage.getRoundedImage()
+        imageSet = true
+        profileImage.image = chosenImage
         didCompleteLastStep()
         dismiss(animated:true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated:true, completion: nil)
+        guard imageSet == false else { return }
         self.displayErrorAlertController(localizedString: NSLocalizedString("PHOTO_ERROR", comment: "photo error"))
     }
     
@@ -135,7 +140,7 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
                 return
             }
             
-            print(user.email, user.displayName)
+            print(user.email!, user.displayName!)
         }
     }
     
@@ -161,7 +166,6 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
                 self.femaleLabel.isHidden = false
                 self.genderLabel.isHidden = false
                 self.genderStackView.isHidden = false
-                self.nextButton.frame = CGRect(x: self.view.bounds.midX - 100, y: self.view.bounds.maxY - 100, width: 200, height: 40)
                 self.greetings.layer.position.x += self.view.bounds.width * 2
                 self.genderLabel.layer.position.x += self.view.bounds.width
                 self.genderLabel.isHidden = false
@@ -195,7 +199,7 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
         maleLabel.alpha = 0.5
         femaleButton.alpha = 0.5
         femaleLabel.alpha = 0.5
-        nextButton.isHidden = true
+        nextButtonBottom.isHidden = true
         
         //animations
         UIView.animate(withDuration: 0.25, animations: {
@@ -226,7 +230,7 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
             maleLabel.isHidden = true
             femaleLabel.isHidden = true
             genderStackView.isHidden = true
-            nextButton.isHidden = true
+            nextButtonBottom.isHidden = true
             
             //animations
             UIView.animate(withDuration: 0.25, animations: {
@@ -243,12 +247,12 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
     private func didCompleteLastStep() {
         self.logoImage.image = UIImage(named: "cheers")
         self.greetings.text = NSLocalizedString("PHOTO_END", comment: "photo upload done")
-        self.nextButton.setTitle(NSLocalizedString("TUTO_END", comment: "the end"), for: .normal)
-        nextButton.isHidden = false
+        self.nextButtonBottom.setTitle(NSLocalizedString("TUTO_END", comment: "the end"), for: .normal)
+        nextButtonBottom.isHidden = false
     }
     
     private func selectSex(isMale: Bool) {
-        nextButton.isHidden = false
+        nextButtonBottom.isHidden = false
         if step == 1 {
             if isMale { //touched men button
                 self.isMale = true
@@ -304,9 +308,9 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
             self.present(self.imagePicker, animated: true, completion: nil)
         }))
         
-        sourceSelector.addAction(UIAlertAction(title: NSLocalizedString("CANCEL", comment: "dismiss") , style: .cancel, handler: { (action) in
-            self.displayErrorAlertController(localizedString: NSLocalizedString("PHOTO_ERROR", comment: "photo error"))
-        }))
+        if imageSet {
+            sourceSelector.addAction(UIAlertAction(title: NSLocalizedString("CANCEL", comment: "dismiss") , style: .cancel, handler: nil ))
+        }
         
         present(sourceSelector, animated: true)
     }
@@ -331,8 +335,10 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
                 return
             }
 
-            print(user.email, user.displayName)
+            print(user.email!, user.displayName!)
         }
     }
+    
+    
     
 }

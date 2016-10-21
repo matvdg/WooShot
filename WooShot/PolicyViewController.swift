@@ -21,7 +21,6 @@ class PolicyViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         dismissButton.alpha = 0
         dismissButton.isHidden = false
-        dismissButton.layer.cornerRadius = dismissButton.bounds.height/2
         dismissButton.backgroundColor = Color.wooColor
         dismissButton.setTitleColor(UIColor.white, for: .normal)
         //animation

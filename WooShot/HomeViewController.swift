@@ -18,10 +18,6 @@ class HomeViewController: WooShotViewController {
     
     
     override func viewDidLoad() {
-//        let loginButton = LoginButton(readPermissions: [ .PublicProfile ])
-//        loginButton.center = view.center
-        
-        //view.addSubview(loginButton)
         super.viewDidLoad()
         elements.layer.zPosition = 1
         let nav = navigationController!.navigationBar
@@ -38,19 +34,9 @@ class HomeViewController: WooShotViewController {
     }
     
     private func designButtons() {
-        let layer = fbloginButton.layer
-        layer.cornerRadius = fbloginButton.frame.height / 2
-        fbloginButton.titleLabel?.adjustsFontSizeToFitWidth = true
-//        layer.shadowOffset = CGSize(width: -1, height: 1)
-//        layer.shadowColor = UIColor.black.cgColor
-//        layer.shadowOpacity = 0.5
         let signUp = signUpButton!
         signUp.titleLabel?.adjustsFontSizeToFitWidth = true
         loginButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        //loginButton.backgroundColor = Color.p600
-//        signUp.layer.borderWidth = 1
-//        signUp.layer.borderColor = UIColor.white.cgColor
-//        signUp.layer.cornerRadius = signUp.bounds.height/2
     }
 
 

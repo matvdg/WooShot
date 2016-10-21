@@ -9,3 +9,6 @@
 NSLocationUsageDescription = "WooShot a besoin de votre position GPS pour vous géolocaliser près de nos établissements partenaires.";
 NSCameraUsageDescription = "WooShot a besoin d'utiliser la caméra pour prendre une photo de profil !";
 NSPhotoLibraryUsageDescription = "WooShot a besoin d'accéder à votre phototèque pour télécharger une photo de profil !";
+NSLocationWhenInUseUsageDescription = "WooShot a besoin de votre position GPS pour vos localiser près de nos partenaires";
+NSLocationAlwaysUsageDescription = "WooShot a besoin de votre position GPS pour vos localiser près de nos partenaires";
+NSLocationUsageDescription = "WooShot a besoin de votre position GPS pour vos localiser près de nos partenaires";

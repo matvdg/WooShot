@@ -18,6 +18,7 @@ class SignInViewController: WooShotViewController, UITextFieldDelegate {
         signInButton.isHidden = true
         emailField.isHidden = true
         separator.isHidden = true
+        resetPwdButton.isHidden = true
         passwordField!.isHidden = true
         title = NSLocalizedString("LOGIN", comment: "logging in navbar title")
     }
@@ -36,18 +37,19 @@ class SignInViewController: WooShotViewController, UITextFieldDelegate {
         let email = emailField!
         let password = passwordField!
         let separator = self.separator!
-        login.titleLabel?.adjustsFontSizeToFitWidth = true
-        login.layer.cornerRadius = login.bounds.height/2
+        let reset = self.resetPwdButton!
         login.backgroundColor = UIColor.white
         login.setTitleColor(Color.wooColor, for: .normal)
         email.layer.position.x -= view.bounds.width
         password.layer.position.x -= view.bounds.width
         separator.layer.position.x -= view.bounds.width
         login.alpha = 0
+        reset.alpha = 0
         separator.isHidden = false
         login.isHidden = false
         email.isHidden = false
         password.isHidden = false
+        reset.isHidden = false
         email.attributedPlaceholder = NSAttributedString(string:NSLocalizedString("PLACEHOLDER_EMAIL", comment: "email"),attributes:[NSForegroundColorAttributeName: whitePlaceholder])
         email.textColor = UIColor.white
         password.textColor = UIColor.white
@@ -59,6 +61,7 @@ class SignInViewController: WooShotViewController, UITextFieldDelegate {
             password.layer.position.x += self.view.bounds.width
             separator.layer.position.x += self.view.bounds.width
             login.alpha = 1
+            reset.alpha = 1
         }
     }
    

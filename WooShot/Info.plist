@@ -28,7 +28,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>545</string>
+	<string>741</string>
 	<key>FacebookAppID</key>
 	<string>1110211065735509</string>
 	<key>FacebookDisplayName</key>
@@ -37,6 +37,12 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>WooShot needs to use your camera to take your profile photo! </string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Your position is required by WooShot to display your position!</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Your position is required by WooShot to display your position!</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your position is required by WooShot to display your position!</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>WooShot needs to access to your photo library to upload your profile photo! </string>
 	<key>UIBackgroundModes</key>
