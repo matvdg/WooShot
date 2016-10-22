@@ -104,7 +104,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "setting", for: indexPath)
         cell.textLabel!.textColor = UIColor.white
         cell.textLabel!.adjustsFontSizeToFitWidth = true
-        
+        cell.imageView?.image = nil
         switch indexPath.section {
         case 1: //sex
             if indexPath.row == 0 {
