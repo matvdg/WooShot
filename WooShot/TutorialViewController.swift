@@ -118,7 +118,7 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
         case 2:
             didCompleteThirdStep()
         case 3:
-            performSegue(withIdentifier: "launchApp", sender: self)
+            uploadDataAndSegue()
         default: break }
     }
     
@@ -251,6 +251,13 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
         nextButtonBottom.isHidden = false
     }
     
+    private func uploadDataAndSegue() {
+        let imageUrl = "\(self.displayName).png"
+        Provider.getImageManager().saveImage(imageUrl: imageUrl , image: self.profileImage.image!)
+        Provider.getUserManager().setCurrentUser(displayName: self.displayName, isMale: self.isMale!, lovesMen: self.lovesMen, lovesWomen: self.lovesWomen, imageUrl: imageUrl)
+        performSegue(withIdentifier: "launchApp", sender: self)
+    }
+    
     private func selectSex(isMale: Bool) {
         nextButtonBottom.isHidden = false
         if step == 1 {
@@ -293,26 +300,35 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
     private func showSourceSelector() {
         let sourceSelector = UIAlertController(title: NSLocalizedString("SOURCE_TITLE", comment: "source text"), message: NSLocalizedString("SOURCE_MSG", comment: "source message"), preferredStyle: .actionSheet)
         
-        sourceSelector.addAction(UIAlertAction(title: NSLocalizedString("SOURCE_CAMERA", comment: "upload from camera") , style: .default, handler: { (action) in
-            self.imagePicker.allowsEditing = true
-            self.imagePicker.delegate = self
-            self.imagePicker.sourceType = .camera
-            self.imagePicker.cameraDevice = .front
-            self.present(self.imagePicker, animated: true, completion: nil)
-        }))
-        
-        sourceSelector.addAction(UIAlertAction(title: NSLocalizedString("SOURCE_LIBRARY", comment: "upload from library") , style: .default, handler: { (action) in
-            self.imagePicker.allowsEditing = true
-            self.imagePicker.delegate = self
-            self.imagePicker.sourceType = .photoLibrary
-            self.present(self.imagePicker, animated: true, completion: nil)
-        }))
-        
-        if imageSet {
-            sourceSelector.addAction(UIAlertAction(title: NSLocalizedString("CANCEL", comment: "dismiss") , style: .cancel, handler: nil ))
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            sourceSelector.addAction(UIAlertAction(title: NSLocalizedString("SOURCE_CAMERA", comment: "upload from camera") , style: .default, handler: { (action) in
+                self.imagePicker.allowsEditing = true
+                self.imagePicker.delegate = self
+                self.imagePicker.sourceType = .camera
+                self.imagePicker.cameraDevice = .front
+                self.present(self.imagePicker, animated: true, completion: nil)
+            }))
+            
+            sourceSelector.addAction(UIAlertAction(title: NSLocalizedString("SOURCE_LIBRARY", comment: "upload from library") , style: .default, handler: { (action) in
+                self.imagePicker.allowsEditing = true
+                self.imagePicker.delegate = self
+                self.imagePicker.sourceType = .photoLibrary
+                self.present(self.imagePicker, animated: true, completion: nil)
+            }))
+            
+            if imageSet {
+                sourceSelector.addAction(UIAlertAction(title: NSLocalizedString("CANCEL", comment: "dismiss") , style: .cancel, handler: nil ))
+            }
+            
+            present(sourceSelector, animated: true)
+        } else {
+            print("\n\n SIMULATOR MODE \n\n")
+            let chosenImage = #imageLiteral(resourceName: "girl4")
+            imageSet = true
+            profileImage.image = chosenImage
+            didCompleteLastStep()
         }
         
-        present(sourceSelector, animated: true)
     }
     
     private func displayErrorAlertController(localizedString: String) {
@@ -324,6 +340,8 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
         // show the alert
         present(myAlert, animated: true)
     }
+    
+    
     
     //unused - keep for later
     private func updateDisplayName(_ user: FIRUser) {

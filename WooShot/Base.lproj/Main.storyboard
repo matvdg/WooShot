@@ -344,6 +344,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mpe-sI-hDm" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="BO5-FO-QOQ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FOI-pA-VN0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1067,7 +1068,7 @@ Préalablement à toute utilisation l’Utilisateur devra reconnaître expressé
                         <rect key="frame" x="0.0" y="0.0" width="375" height="579"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="girl4" translatesAutoresizingMaskIntoConstraints="NO" id="YSa-Ab-8pc" customClass="RoundedImageView" customModule="WooShot" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="YSa-Ab-8pc" customClass="RoundedImageView" customModule="WooShot" customModuleProvider="target">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="VuB-05-QHe"/>
                                     <constraint firstAttribute="height" constant="200" id="xlz-Cl-nfQ"/>
@@ -1115,7 +1116,7 @@ Préalablement à toute utilisation l’Utilisateur devra reconnaître expressé
                                                         <constraint firstAttribute="height" constant="20" id="K5Z-Ns-0ga"/>
                                                         <constraint firstAttribute="width" constant="20" id="cDA-6T-sTh"/>
                                                     </constraints>
-                                                    <state key="normal" image="pencil2"/>
+                                                    <state key="normal" backgroundImage="pencil2"/>
                                                 </button>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e9K-Z8-nvV">
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1181,11 +1182,13 @@ Préalablement à toute utilisation l’Utilisateur devra reconnaître expressé
                     <connections>
                         <outlet property="profileImage" destination="YSa-Ab-8pc" id="g3u-sL-LQl"/>
                         <outlet property="tableView" destination="ePr-mo-pBh" id="Sq5-Wo-tQs"/>
+                        <segue destination="rWa-84-BMn" kind="modal" identifier="showPolicy" modalTransitionStyle="coverVertical" id="pug-h6-ULU"/>
+                        <segue destination="WTi-a7-fSh" kind="modal" identifier="showHelp" modalTransitionStyle="coverVertical" id="X1n-Ol-3ea"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AB3-Sk-0fv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1530.5" y="1239.5"/>
+            <point key="canvasLocation" x="1531" y="1253"/>
         </scene>
         <!--Maps View Controller-->
         <scene sceneID="vMU-o7-S6y">
@@ -1221,12 +1224,261 @@ Préalablement à toute utilisation l’Utilisateur devra reconnaître expressé
             </objects>
             <point key="canvasLocation" x="1530.5" y="-229.5"/>
         </scene>
+        <!--HelpProfileVC-->
+        <scene sceneID="biW-Li-Vyx">
+            <objects>
+                <viewController title="HelpProfileVC" modalPresentationStyle="overFullScreen" id="WTi-a7-fSh" customClass="PolicyViewController" customModule="WooShot" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2gW-DH-kGf"/>
+                        <viewControllerLayoutGuide type="bottom" id="ss2-FB-uBj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="juf-PQ-FXh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82O-LG-soD">
+                                <color key="backgroundColor" red="0.019607843140000001" green="0.050980392159999999" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Aide WooShot">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="11" name="SFUIDisplay-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="441.89999999999998" defaultTabInterval="35.399999999999999" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="11" name="SFUIDisplay-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="441.89999999999998" defaultTabInterval="35.399999999999999" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <mutableString key="content">
+blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a v blablabla ablabalab balablabl a  blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a v blablabla ablabalab balablabl a  blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a v blablabla ablabalab balablabl a  blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a v blablabla ablabalab balablabl a  blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a v blablabla ablabalab balablabl a  blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a v blablabla ablabalab balablabl a  blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a v blablabla ablabalab balablabl a  blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a v blablabla ablabalab balablabl a  blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a v blablabla ablabalab balablabl a  blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a v blablabla ablabalab balablabl a  blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a v blablabla ablabalab balablabl a  blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a v blablabla ablabalab balablabl a  blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a v blablabla ablabalab balablabl a  blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a blablabla ablabalab balablabl a v blablabla ablabalab balablab</mutableString>
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="11" name="SFUIDisplay-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="441.89999999999998" defaultTabInterval="35.399999999999999" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6nY-6U-GpX" customClass="AppleMusicButton" customModule="WooShot" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.1176470588" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3AV-Nb-xY3"/>
+                                    <constraint firstAttribute="width" constant="100" id="9Ku-qx-9sN"/>
+                                </constraints>
+                                <state key="normal" title="OK">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismiss:" destination="WTi-a7-fSh" eventType="touchUpInside" id="JFq-2o-lCr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.019607843140000001" green="0.050980392159999999" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="82O-LG-soD" firstAttribute="top" secondItem="juf-PQ-FXh" secondAttribute="topMargin" constant="20" id="4q7-7g-DWT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="82O-LG-soD" secondAttribute="trailing" id="AIa-JH-dJ0"/>
+                            <constraint firstItem="6nY-6U-GpX" firstAttribute="centerX" secondItem="juf-PQ-FXh" secondAttribute="centerX" constant="-0.5" id="Hra-fs-cvC"/>
+                            <constraint firstItem="ss2-FB-uBj" firstAttribute="top" secondItem="82O-LG-soD" secondAttribute="bottom" constant="70" id="NrN-Dd-BHn"/>
+                            <constraint firstItem="82O-LG-soD" firstAttribute="leading" secondItem="juf-PQ-FXh" secondAttribute="leadingMargin" id="Zov-9r-0Wf"/>
+                            <constraint firstItem="ss2-FB-uBj" firstAttribute="top" secondItem="6nY-6U-GpX" secondAttribute="bottom" constant="8" id="q0q-Nr-37o"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wKN-km-Xyz"/>
+                    <connections>
+                        <outlet property="dismissButton" destination="6nY-6U-GpX" id="5Qs-Tr-Vew"/>
+                        <outlet property="policy" destination="82O-LG-soD" id="aXa-ur-3yw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8jk-3Z-gUn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1992" y="1253"/>
+        </scene>
+        <!--PolicyProfileVC-->
+        <scene sceneID="36d-hJ-Ucx">
+            <objects>
+                <viewController title="PolicyProfileVC" modalPresentationStyle="overFullScreen" id="rWa-84-BMn" customClass="PolicyViewController" customModule="WooShot" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vTY-xc-jB0"/>
+                        <viewControllerLayoutGuide type="bottom" id="aOy-wf-l6M"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9O4-dU-Abb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csk-Hc-ikG">
+                                <color key="backgroundColor" red="0.019607843140000001" green="0.050980392159999999" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Conditions Générales d’Utilisation et Confidentialité">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="11" name="SFUIDisplay-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="441.89999999999998" defaultTabInterval="35.399999999999999" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="11" name="SFUIDisplay-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="441.89999999999998" defaultTabInterval="35.399999999999999" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <mutableString key="content">
+Les présentes Conditions Générales d'Utilisation ont pour objet de définir les modalités de mise à disposition de l’Application WOOSHOT, ci-après nommée « le Service » et les conditions d'utilisation du Service par l'Utilisateur. 
+
+« L’Utilisateur » réfère à toute personne qui utilise l’Application ou l'un des Services proposés par WOOSHOT.
+« L’Application » réfère au logiciel mobile numérique permettant l’utilisation du Service proposé par WOOSHOT.
+« Les Informations » désignent les données fournies ou générées par l'Utilisateur dans les différentes rubriques de l’Application.
+« La Communauté » désigne l’ensemble des Utilisateurs du Service WOOSHOT ainsi que ses partenaires.
+
+Tout document écrit et/ou tout autre condition particulière contenus notamment dans des documents issus de l’Utilisateur ne peut prévaloir sur les présentes Conditions Générales d’Utilisation.
+
+Il est précisé en tant que besoin, que l’Utilisateur peut sauvegarder ou imprimer les présentes Conditions Générales d’Utilisation, à condition toutefois de ne pas les modifier. L’Utilisateur peut en faire la demande en version PDF à l’adresse :
+support@wooshot.com
+
+</mutableString>
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="11" name="SFUIDisplay-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="441.89999999999998" defaultTabInterval="35.399999999999999" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">L’Application WOOSHOT est accessible gratuitement. Pour accéder au service, l'utilisateur doit posséder un support numérique sous iOS 10 minimum (iPhone et iPodTouch) et d’un accès à du WiFi ou à un réseau de données cellulaires (data). Les frais relatifs à ces équipements sont à la charge exclusive de l'Utilisateur.
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="11" name="SFUIDisplay-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="441.89999999999998" defaultTabInterval="35.399999999999999" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <mutableString key="content">
+WOOSHOT est le titulaire exclusif des droits intellectuels sur l’Application notamment de l’ensemble des textes, logos, commentaires, illustrations, qu’ils soient visuels ou sonores, exception faite du Contenu Pédagogique.
+Toute reproduction totale ou partielle des marques ainsi que toute représentation totale ou partielle des marques et/ou logos, effectuées à partir des éléments de l’Application sans l'autorisation expresse de la société WOOSHOT est prohibée, au sens de l'article L 713-2 du code de la propriété intellectuelle et peut entraîner des poursuites judiciaires.
+
+</mutableString>
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="11" name="SFUIDisplay-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="441.89999999999998" defaultTabInterval="35.399999999999999" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <mutableString key="content">L’Utilisateur sera tenu de communiquer certaines informations telles que sa photo, son nom, son prénom, son sexe et ses préférenes ainsi que son adresse mail afin d’adhérer au Service WOOSHOT. 
+Sauf opposition, l’Utilisateur est susceptible de recevoir, des informations commerciales de la part de la Communauté WOOSHOT par voie électronique.
+A ce titre, l’Utilisateur pourra exercer son droit d’accès, de modification, de rectification et de suppression des données qui le concernent, étant informé que le Service WOOSHOT a fait l’objet d’une déclaration à la CNIL sous le numéro xxxxxxxx, et ce conformément à la loi « Informatique et Libertés », nº 7817 du 6 janvier 1978.
+Pour l'exercer, adressez votre demande par écrit à : 
+WOOSHOT - xxxxxxxxxxx  
+</mutableString>
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="11" name="SFUIDisplay-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" tailIndent="441.89999999999998" minimumLineHeight="17" defaultTabInterval="35.399999999999999" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">En cas de problèmes avec les renseignements fournis par l’Utilisateur la responsabilité de WOOSHOT ne pourra être en aucun cas engagée et l’Utilisateur devra immédiatement informer WOOSHOT de cette situation par courriel à l’adresse : </string>
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="11" name="SFUIDisplay-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="441.89999999999998" defaultTabInterval="35.399999999999999" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="support@wooshot.com">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="11" name="SFUIDisplay-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="441.89999999999998" defaultTabInterval="35.399999999999999" tighteningFactorForTruncation="0.0"/>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <mutableString key="content">
+
+WOOSHOT s'efforce d'assurer au mieux l'accès au Service WOOSHOT ainsi que l'exactitude et la mise à jour des informations figurant sur l’Application, exception faite du Contenu Pédagogique.
+
+
+Le cas de force majeure désigne tout événement en dehors du contrôle de WOOSHOT et contre lequel WOOSHOT n’a pu raisonnablement se prémunir.
+WOOSHOT n’est pas responsable en cas de manquement à ses obligations, telles que définies dans les présentes CGU résultant d’un cas de force majeure.
+
+Préalablement à toute utilisation l’Utilisateur devra reconnaître expressément avoir accepté les présentes Conditions Générales d’Utilisation.
+
+</mutableString>
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="11" name="SFUIDisplay-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="441.89999999999998" defaultTabInterval="35.399999999999999" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Compte tenu du caractère électronique du contrat passé entre l’Utilisateur et WOOSHOT, cette acceptation n’est en aucune façon conditionnée par une signature manuscrite de la part du client.</string>
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="11" name="SFUIDisplay-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="441.89999999999998" defaultTabInterval="35.399999999999999" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEf-lT-PoA" customClass="AppleMusicButton" customModule="WooShot" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.1176470588" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="XFF-Y1-8Q1"/>
+                                    <constraint firstAttribute="height" constant="40" id="ebJ-VR-iWN"/>
+                                </constraints>
+                                <state key="normal" title="OK">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismiss:" destination="rWa-84-BMn" eventType="touchUpInside" id="eat-D9-ls1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.019607843140000001" green="0.050980392159999999" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="csk-Hc-ikG" secondAttribute="trailing" id="66L-XM-J38"/>
+                            <constraint firstItem="aOy-wf-l6M" firstAttribute="top" secondItem="IEf-lT-PoA" secondAttribute="bottom" constant="8" id="7Yh-Tc-yoy"/>
+                            <constraint firstItem="csk-Hc-ikG" firstAttribute="top" secondItem="9O4-dU-Abb" secondAttribute="topMargin" constant="20" id="A8l-8i-qeg"/>
+                            <constraint firstItem="csk-Hc-ikG" firstAttribute="leading" secondItem="9O4-dU-Abb" secondAttribute="leadingMargin" id="MqR-6v-01i"/>
+                            <constraint firstItem="IEf-lT-PoA" firstAttribute="centerX" secondItem="9O4-dU-Abb" secondAttribute="centerX" constant="-0.5" id="MyM-Ql-vhc"/>
+                            <constraint firstItem="aOy-wf-l6M" firstAttribute="top" secondItem="csk-Hc-ikG" secondAttribute="bottom" constant="70" id="t9a-Zn-w3o"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="pv1-nL-Na0"/>
+                    <connections>
+                        <outlet property="dismissButton" destination="IEf-lT-PoA" id="w3g-aJ-rJd"/>
+                        <outlet property="policy" destination="csk-Hc-ikG" id="C6L-9D-VHt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AD4-V0-NPX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="872" y="1253"/>
+        </scene>
     </scenes>
     <resources>
         <image name="drink" width="20" height="20"/>
         <image name="fb" width="20" height="20"/>
         <image name="female" width="100" height="100"/>
-        <image name="girl4" width="1142" height="1411"/>
         <image name="male" width="100" height="100"/>
         <image name="maps" width="100" height="100"/>
         <image name="pencil" width="100" height="100"/>
@@ -1240,10 +1492,10 @@ Préalablement à toute utilisation l’Utilisateur devra reconnaître expressé
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Rq2-er-SaI"/>
-        <segue reference="igT-ze-Ilp"/>
-        <segue reference="RHM-yr-z7t"/>
         <segue reference="anI-vn-ctl"/>
+        <segue reference="Rq2-er-SaI"/>
+        <segue reference="RHM-yr-z7t"/>
+        <segue reference="igT-ze-Ilp"/>
         <segue reference="qgg-d4-ETm"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.7725490196" green="0.066666666669999999" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
