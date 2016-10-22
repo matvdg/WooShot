@@ -12,12 +12,16 @@ import UIKit
 extension UIImage
 {
     
-    func getRoundedImage() -> UIImage {
+    func getRoundedImage(cornerRadius: CGFloat?) -> UIImage {
         let imageView = UIImageView(image: self.cropToSquare().resizeImage())
         var layer = CALayer()
         layer = imageView.layer
         layer.masksToBounds = true
-        layer.cornerRadius = imageView.image!.size.height/2
+        if let radius = cornerRadius {
+            layer.cornerRadius = radius
+        } else {
+            layer.cornerRadius = imageView.image!.size.height/2
+        }
         UIGraphicsBeginImageContext(imageView.bounds.size)
         layer.render(in: UIGraphicsGetCurrentContext()!)
         let roundedImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -67,6 +71,17 @@ extension UIImage
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return newImage!
+    }
+    
+    var rotatedCopy: UIImage {
+        if (imageOrientation == UIImageOrientation.up) {
+            return self
+        }
+        UIGraphicsBeginImageContext(size)
+        draw(in: CGRect(origin: CGPoint.zero, size: size))
+        let copy = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return copy!
     }
     
 }

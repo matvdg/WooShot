@@ -54,9 +54,4 @@ class UserManager {
             user.lovesFemale = lovesWomen
         }
     }
-    
-    
-    
-    
-    
 }

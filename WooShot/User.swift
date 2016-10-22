@@ -24,15 +24,7 @@ class User {
         self.lovesMale = lovesMale
     }
     
-    init(displayName: String, imageUrl: String){
-        //self.init(displayName: displayName, imageUrl: imageUrl, isMale: true, lovesMale: false, lovesFemale: true)
-        self.displayName = displayName
-        self.imageUrl = imageUrl
-        self.isMale = true
-        self.lovesFemale = false
-        self.lovesMale = true
+    convenience init(displayName: String, imageUrl: String){
+        self.init(displayName: displayName, imageUrl: imageUrl, isMale: true, lovesMale: false, lovesFemale: true)
     }
-    
-    
-    
 }

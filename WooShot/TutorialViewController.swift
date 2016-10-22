@@ -253,7 +253,7 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
     
     private func uploadDataAndSegue() {
         let imageUrl = "\(self.displayName).png"
-        Provider.getImageManager().saveImage(imageUrl: imageUrl , image: self.profileImage.image!)
+        Provider.getImageManager().saveImage(imageUrl: imageUrl , image: self.profileImage.image!.rotatedCopy)
         Provider.getUserManager().setCurrentUser(displayName: self.displayName, isMale: self.isMale!, lovesMen: self.lovesMen, lovesWomen: self.lovesWomen, imageUrl: imageUrl)
         performSegue(withIdentifier: "launchApp", sender: self)
     }
