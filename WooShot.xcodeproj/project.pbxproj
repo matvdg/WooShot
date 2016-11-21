@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B36CE49C9F4FB9D13E147DA3 /* Pods_WooShot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02683531865C56589A458F00 /* Pods_WooShot.framework */; };
+		5182B56E966528A0CB8DF7D8 /* Pods_WooShot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 512E03B7F2F91DF7029C5393 /* Pods_WooShot.framework */; };
 		F614AC801D82BE2500CFEDFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F614AC7F1D82BE2500CFEDFD /* GoogleService-Info.plist */; };
 		F61F5E4C1DB6754700901228 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F5E4B1DB6754700901228 /* RoundedImageView.swift */; };
 		F6280DAC1DBAA2190026368D /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6280DAB1DBAA2190026368D /* ImageManager.swift */; };
@@ -44,9 +44,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		02683531865C56589A458F00 /* Pods_WooShot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WooShot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E97E16EADE3498A741F58F96 /* Pods-WooShot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; lineEnding = 0; name = "Pods-WooShot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WooShot/Pods-WooShot.debug.xcconfig"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xcconfig; };
-		F19F007DA31C8D87D8629893 /* Pods-WooShot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; lineEnding = 0; name = "Pods-WooShot.release.xcconfig"; path = "Pods/Target Support Files/Pods-WooShot/Pods-WooShot.release.xcconfig"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xcconfig; };
+		1940669D403847ACA78DFBEF /* Pods-WooShot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WooShot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WooShot/Pods-WooShot.debug.xcconfig"; sourceTree = "<group>"; };
+		512E03B7F2F91DF7029C5393 /* Pods_WooShot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WooShot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FE6701AC025C22BEE84FCF2 /* Pods-WooShot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WooShot.release.xcconfig"; path = "Pods/Target Support Files/Pods-WooShot/Pods-WooShot.release.xcconfig"; sourceTree = "<group>"; };
 		F614AC7F1D82BE2500CFEDFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F614AC9F1D82C18E00CFEDFD /* WooShot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WooShot.entitlements; sourceTree = "<group>"; };
 		F61F5E4B1DB6754700901228 /* RoundedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
@@ -94,28 +94,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B36CE49C9F4FB9D13E147DA3 /* Pods_WooShot.framework in Frameworks */,
+				5182B56E966528A0CB8DF7D8 /* Pods_WooShot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		45969CE0FC80E558DEB3491B /* Frameworks */ = {
+		0F3705DBEC0B2214479095B9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				02683531865C56589A458F00 /* Pods_WooShot.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6A7C618AA9A355DBCE45CB40 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E97E16EADE3498A741F58F96 /* Pods-WooShot.debug.xcconfig */,
-				F19F007DA31C8D87D8629893 /* Pods-WooShot.release.xcconfig */,
+				1940669D403847ACA78DFBEF /* Pods-WooShot.debug.xcconfig */,
+				7FE6701AC025C22BEE84FCF2 /* Pods-WooShot.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		8AAF890F0F33CD227BCF63A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				512E03B7F2F91DF7029C5393 /* Pods_WooShot.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F62C04C61DBB68630029D6AE /* Managers */ = {
@@ -211,8 +211,8 @@
 				F6F060F51D2DA1E400063049 /* WooShot */,
 				F6D0D2D41D2DCB5D00E7E25C /* Supporting Files */,
 				F6F060F41D2DA1E400063049 /* Products */,
-				6A7C618AA9A355DBCE45CB40 /* Pods */,
-				45969CE0FC80E558DEB3491B /* Frameworks */,
+				0F3705DBEC0B2214479095B9 /* Pods */,
+				8AAF890F0F33CD227BCF63A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -242,13 +242,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F6F061051D2DA1E400063049 /* Build configuration list for PBXNativeTarget "WooShot" */;
 			buildPhases = (
-				A1BCD440DA534B48D6F49A27 /* [CP] Check Pods Manifest.lock */,
+				4B1FC4A244CF0E48D3FE6C78 /* [CP] Check Pods Manifest.lock */,
 				F6F060EF1D2DA1E400063049 /* Sources */,
 				F6F060F01D2DA1E400063049 /* Frameworks */,
 				F6F060F11D2DA1E400063049 /* Resources */,
-				4E45118C672CBE5ADF0F0B2C /* [CP] Embed Pods Frameworks */,
-				6C58B8D9E26EF0ACB7A62633 /* [CP] Copy Pods Resources */,
 				F6D0D2D31D2DCA6E00E7E25C /* ShellScript */,
+				971F760B5AE2F1E3BB9301CE /* [CP] Embed Pods Frameworks */,
+				42BB44584699E415BE425C33 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -323,22 +323,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4E45118C672CBE5ADF0F0B2C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WooShot/Pods-WooShot-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6C58B8D9E26EF0ACB7A62633 /* [CP] Copy Pods Resources */ = {
+		42BB44584699E415BE425C33 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -353,7 +338,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WooShot/Pods-WooShot-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A1BCD440DA534B48D6F49A27 /* [CP] Check Pods Manifest.lock */ = {
+		4B1FC4A244CF0E48D3FE6C78 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -366,6 +351,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		971F760B5AE2F1E3BB9301CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WooShot/Pods-WooShot-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F6D0D2D31D2DCA6E00E7E25C /* ShellScript */ = {
@@ -551,7 +551,7 @@
 		};
 		F6F061061D2DA1E400063049 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E97E16EADE3498A741F58F96 /* Pods-WooShot.debug.xcconfig */;
+			baseConfigurationReference = 1940669D403847ACA78DFBEF /* Pods-WooShot.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -574,7 +574,7 @@
 		};
 		F6F061071D2DA1E400063049 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F19F007DA31C8D87D8629893 /* Pods-WooShot.release.xcconfig */;
+			baseConfigurationReference = 7FE6701AC025C22BEE84FCF2 /* Pods-WooShot.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
