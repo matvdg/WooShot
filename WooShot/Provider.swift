@@ -14,6 +14,8 @@ class Provider {
     private static let imageManager = ImageManager()
     private static let chatManager = ChatManager()
     private static let placeManager = PlaceManager()
+    private static let auth = Auth()
+
     
     static func getUserManager() -> UserManager {
         return self.userManager
@@ -29,6 +31,10 @@ class Provider {
     
     static func getPlaceManager() -> PlaceManager {
         return self.placeManager
+    }
+    
+    static func getAuth() -> Auth {
+        return self.auth
     }
     
     

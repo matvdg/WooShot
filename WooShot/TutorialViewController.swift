@@ -75,8 +75,8 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
     
     override func viewDidAppear(_ animated: Bool) {
         nextButton.backgroundColor = UIColor.white
-        nextButton.setTitleColor(Color.wooColor, for: .normal)
-        nextButtonBottom.setTitleColor(Color.wooColor, for: .normal)
+        nextButton.setTitleColor(UIColor.wooColor, for: .normal)
+        nextButtonBottom.setTitleColor(UIColor.wooColor, for: .normal)
         nextButton.layer.zPosition = 10
     }
     
@@ -105,7 +105,7 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated:true, completion: nil)
         guard imageSet == false else { return }
-        self.displayErrorAlertController(localizedString: NSLocalizedString("PHOTO_ERROR", comment: "photo error"))
+        self.presentErrorAlertViewController(message: NSLocalizedString("PHOTO_ERROR", comment: "photo error"))
     }
     
     //controller's logic methods
@@ -129,15 +129,7 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
         changeRequest.displayName = user.email!.components(separatedBy: "@")[0]
         changeRequest.commitChanges(){ (error) in
             if let error = error {
-                // create alert controller
-                let myAlert = UIAlertController(title: NSLocalizedString("ERROR", comment: "error"), message: error.localizedDescription, preferredStyle: .alert)
-                myAlert.view.tintColor = Color.wooColor
-                // add "OK" button
-                myAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                // show the alert
-                self.present(myAlert, animated: true, completion: nil)
-                print(error.localizedDescription)
-                return
+                self.presentErrorAlertViewController(message: error.localizedDescription)
             }
             
             print(user.email!, user.displayName!)
@@ -146,7 +138,7 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
     
     private func didCompleteFirstStep() {
         if (nameField.text?.isEmpty)! { //error
-            displayErrorAlertController(localizedString: NSLocalizedString("NAME_ERROR", comment: "name error"))
+            self.presentErrorAlertViewController(message: NSLocalizedString("NAME_ERROR", comment: "name error"))
         } else { //name ok
             nameField.resignFirstResponder()
             displayName = nameField.text!
@@ -217,7 +209,7 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
     
     private func didCompleteThirdStep() {
         if !(lovesWomen || lovesMen) { //error
-            displayErrorAlertController(localizedString: NSLocalizedString("PREF_ERROR", comment: "pref error unselected"))
+            self.presentErrorAlertViewController(message: NSLocalizedString("PREF_ERROR", comment: "pref error unselected"))
         } else {
             showSourceSelector()
             step += 1
@@ -329,16 +321,6 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
             didCompleteLastStep()
         }
         
-    }
-    
-    private func displayErrorAlertController(localizedString: String) {
-        // create alert controller
-        let myAlert = UIAlertController(title: NSLocalizedString("ERROR", comment: "error"), message: localizedString, preferredStyle: UIAlertControllerStyle.alert)
-        myAlert.view.tintColor = Color.wooColor
-        // add "OK" button
-        myAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        // show the alert
-        present(myAlert, animated: true)
     }
     
     

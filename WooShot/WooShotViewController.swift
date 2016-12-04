@@ -12,7 +12,7 @@ class WooShotViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.layer.addSublayer(Color.getGradient(view: self.view))
+        self.view.layer.addSublayer(UIColor.getGradient(view: self.view))
     }
 
 }

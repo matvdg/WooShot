@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FacebookLogin
 
 class HomeViewController: WooShotViewController {
 
@@ -16,17 +17,17 @@ class HomeViewController: WooShotViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         elements.layer.zPosition = 1
         let nav = navigationController!.navigationBar
-        nav.barTintColor = Color.wooColorDark
+        nav.barTintColor = UIColor.wooColorDark
         nav.tintColor = UIColor.white
         nav.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         let backItem = UIBarButtonItem()
         backItem.title = NSLocalizedString("HOME", comment: "back button")
         navigationItem.backBarButtonItem = backItem
+        self.fbloginButton.addTarget(self, action: #selector(didTouchFb), for: .touchUpInside)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -37,6 +38,22 @@ class HomeViewController: WooShotViewController {
         let signUp = signUpButton!
         signUp.titleLabel?.adjustsFontSizeToFitWidth = true
         loginButton.titleLabel?.adjustsFontSizeToFitWidth = true
+    }
+    
+    func didTouchFb() {
+        let loginManager = LoginManager()
+        loginManager.logIn([ .publicProfile ], viewController: self) { loginResult in
+            switch loginResult {
+            case .failed(let error):
+                self.presentErrorAlertViewController(message: error.localizedDescription)
+            case .cancelled:
+                print("User cancelled login.")
+            case .success(_, _, let accessToken):
+                Provider.getAuth().facebookConnect(token: accessToken, callback: { (user, error) in
+                    //dd
+                })
+            }
+        }
     }
 
 

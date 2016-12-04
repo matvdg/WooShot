@@ -8,31 +8,6 @@
 
 import UIKit
 
-class Color {
-    
-    //p500 #E91E63
-    static let wooColor = UIColor(netHex: 0xE91E63)
-    //a700 #C51162
-    static let wooColorDark = UIColor(netHex: 0xC51162)
-    static let blueBackground = UIColor(red: 5, green: 13, blue: 37)
-    
-    static let a200 = UIColor(netHex: 0xFF4081)
-    static let p600 = UIColor(netHex: 0xD81B60)
-    static let p50 = UIColor(netHex: 0xFCE4EC)
-    static let p800 = UIColor(netHex: 0xAD1457)
-    static let p800t = UIColor(hex: 0xAD1457, alpha: 0.54)
-    
-    static func getGradient(view: UIView) -> CAGradientLayer {
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = view.bounds
-        gradientLayer.colors = [Color.wooColorDark.cgColor,Color.wooColor.cgColor]
-        gradientLayer.locations = [0, 1]
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-        gradientLayer.endPoint = CGPoint(x: 0, y: 1)
-        return gradientLayer
-    }
-    
-}
 
 
 extension UIColor {
@@ -59,6 +34,29 @@ extension UIColor {
     convenience init(hex:Int, alpha: CGFloat) {
         self.init(red:(hex >> 16) & 0xff, green:(hex >> 8) & 0xff, blue:hex & 0xff, opacity: alpha)
     }
+    
+    //p500 #E91E63
+    static let wooColor = UIColor(netHex: 0xE91E63)
+    //a700 #C51162
+    static let wooColorDark = UIColor(netHex: 0xC51162)
+    static let blueBackground = UIColor(red: 5, green: 13, blue: 37)
+    
+    static let a200 = UIColor(netHex: 0xFF4081)
+    static let p600 = UIColor(netHex: 0xD81B60)
+    static let p50 = UIColor(netHex: 0xFCE4EC)
+    static let p800 = UIColor(netHex: 0xAD1457)
+    static let p800t = UIColor(hex: 0xAD1457, alpha: 0.54)
+    
+    static func getGradient(view: UIView) -> CAGradientLayer {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [UIColor.wooColorDark.cgColor,UIColor.wooColor.cgColor]
+        gradientLayer.locations = [0, 1]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 0, y: 1)
+        return gradientLayer
+    }
+
 }
 
 

@@ -162,8 +162,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         guard let headerCell = tableView.dequeueReusableCell(withIdentifier: "settingHeader") as? HeaderTableViewCell else { return UITableViewCell() }
         headerCell.textLabel!.textColor = UIColor.white
         headerCell.textLabel!.adjustsFontSizeToFitWidth = true
-        headerCell.backgroundColor = Color.blueBackground
-        tableView.backgroundColor = Color.blueBackground
+        headerCell.backgroundColor = UIColor.blueBackground
+        tableView.backgroundColor = UIColor.blueBackground
         headerCell.editNameButton.isHidden = true
         headerCell.textField.isHidden = true
         headerCell.textLabel!.textColor = UIColor.white

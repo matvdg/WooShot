@@ -1,7 +1,7 @@
 import UIKit
 import Firebase
 
-class SignInViewController: WooShotViewController, UITextFieldDelegate {
+class LogInViewController: WooShotViewController, UITextFieldDelegate {
     
     @IBOutlet weak var separator: UIView!
     @IBOutlet weak var elements: UIView!
@@ -39,7 +39,7 @@ class SignInViewController: WooShotViewController, UITextFieldDelegate {
         let separator = self.separator!
         let reset = self.resetPwdButton!
         login.backgroundColor = UIColor.white
-        login.setTitleColor(Color.wooColor, for: .normal)
+        login.setTitleColor(UIColor.wooColor, for: .normal)
         email.layer.position.x -= view.bounds.width
         password.layer.position.x -= view.bounds.width
         separator.layer.position.x -= view.bounds.width
@@ -67,71 +67,41 @@ class SignInViewController: WooShotViewController, UITextFieldDelegate {
    
     @IBAction func didTapSignIn(_ sender: UIButton) {
         performSegue(withIdentifier: "launchApp", sender: self)
-        /*activitySpin.startAnimating()
+        activitySpin.startAnimating()
         // Sign In with credentials.
         let email = emailField.text!
         let password = passwordField.text!
         if email.isEmpty || password.isEmpty {
-            // create alert controller
-            let myAlert = UIAlertController(title: NSLocalizedString("ERROR", comment: "error"), message: NSLocalizedString("EMPTY", comment: "empty field"), preferredStyle: UIAlertControllerStyle.alert)
-            myAlert.view.tintColor = Color.wooColor
-            // add "OK" button
-            myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-            // show the alert
-            present(myAlert, animated: true, completion: nil)
+            self.presentErrorAlertViewController(message: NSLocalizedString("EMPTY", comment: "empty field"))
             activitySpin.stopAnimating()
 
         } else {
             FIRAuth.auth()?.signIn(withEmail: email, password: password) { (user, error) in
                 if let error = error {
-                    // create alert controller
-                    let myAlert = UIAlertController(title: NSLocalizedString("ERROR", comment: "error"), message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-                    myAlert.view.tintColor = Color.wooColor
-                    // add "OK" button
-                    myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                    // show the alert
-                    self.present(myAlert, animated: true, completion: nil)
+                    self.presentErrorAlertViewController(message: error.localizedDescription)
                     self.activitySpin.stopAnimating()
                     return
                 }
                 self.signedIn(user!)
             }
-        }*/
+        }
     }
     
     @IBAction func didRequestPasswordReset(_ sender: UIButton) {
         let prompt = UIAlertController.init(title: NSLocalizedString("RESET_PWD_TITLE", comment: "reset password title"), message: NSLocalizedString("RESET_PWD_MSG", comment: "reset password message"), preferredStyle: UIAlertControllerStyle.alert)
-        prompt.view.tintColor = Color.wooColor
+        prompt.view.tintColor = UIColor.wooColor
         let okAction = UIAlertAction.init(title: "OK", style: UIAlertActionStyle.default) { (action) in
             let userInput = prompt.textFields![0].text
             if (userInput!.isEmpty) {
-                // create alert controller
-                let myAlert = UIAlertController(title: NSLocalizedString("ERROR", comment: "error"), message: NSLocalizedString("EMPTY", comment: "empty field"), preferredStyle: UIAlertControllerStyle.alert)
-                myAlert.view.tintColor = Color.wooColor
-                // add "OK" button
-                myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                // show the alert
-                self.present(myAlert, animated: true, completion: nil)
+                self.presentErrorAlertViewController(message: NSLocalizedString("EMPTY", comment: "empty field"))
                 return
             }
             FIRAuth.auth()?.sendPasswordReset(withEmail: userInput!) { (error) in
                 if let error = error {
-                    // create alert controller
-                    let myAlert = UIAlertController(title: NSLocalizedString("ERROR", comment: "error"), message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-                    myAlert.view.tintColor = Color.wooColor
-                    // add "OK" button
-                    myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                    // show the alert
-                    self.present(myAlert, animated: true, completion: nil)
+                    self.presentErrorAlertViewController(message: error.localizedDescription)
                     return
                 } else {
-                    // create alert controller
-                    let myAlert = UIAlertController(title: NSLocalizedString("RESET_PWD_SENT_TITLE", comment: "reset done title"), message: NSLocalizedString("RESET_PWD_SENT_MSG", comment: "reset done message"), preferredStyle: UIAlertControllerStyle.alert)
-                    myAlert.view.tintColor = Color.wooColor
-                    // add "OK" button
-                    myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                    // show the alert
-                    self.present(myAlert, animated: true, completion: nil)
+                    self.presentAlertViewController(title: NSLocalizedString("RESET_PWD_SENT_TITLE", comment: "reset done title"), message: NSLocalizedString("RESET_PWD_SENT_MSG", comment: "reset done message"))
                     return
                 }
             }

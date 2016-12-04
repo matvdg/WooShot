@@ -21,7 +21,7 @@ class PolicyViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         dismissButton.alpha = 0
         dismissButton.isHidden = false
-        dismissButton.backgroundColor = Color.wooColor
+        dismissButton.backgroundColor = UIColor.wooColor
         dismissButton.setTitleColor(UIColor.white, for: .normal)
         //animation
         UIView.animate(withDuration: 1.0, delay: 0.30, options: .curveEaseOut, animations: { self.dismissButton.alpha = 1 }, completion: nil)
