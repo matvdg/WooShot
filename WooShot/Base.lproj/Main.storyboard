@@ -891,7 +891,7 @@ Préalablement à toute utilisation l’Utilisateur devra reconnaître expressé
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" red="0.019607843137254902" green="0.050980392156862744" blue="0.14509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.019607843140000001" green="0.050980392159999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="kzh-Oi-oGs" secondAttribute="trailing" constant="20" id="EP6-cP-dE5"/>
@@ -955,7 +955,7 @@ Préalablement à toute utilisation l’Utilisateur devra reconnaître expressé
         <!--Photos-->
         <scene sceneID="dft-ze-job">
             <objects>
-                <viewController storyboardIdentifier="photos" title="Photos" id="ELj-Gb-twL" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="photos" title="Photos" id="ELj-Gb-twL" customClass="PhotoViewController" customModule="WooShot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Uud-df-HKV"/>
                         <viewControllerLayoutGuide type="bottom" id="VeH-E4-9Vt"/>
@@ -963,12 +963,143 @@ Préalablement à toute utilisation l’Utilisateur devra reconnaître expressé
                     <view key="view" contentMode="scaleToFill" id="kGW-os-ccn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.019607843137254902" green="0.050980392156862744" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TUf-9l-RHF">
+                                <rect key="frame" x="0.0" y="96" width="375" height="571"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l9K-wb-m6L">
+                                        <rect key="frame" x="0.0" y="100" width="375" height="370"/>
+                                        <color key="backgroundColor" red="0.019607843140000001" green="0.050980392159999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="370" id="3oW-sU-Ljo"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Tkl-22-dxR">
+                                            <size key="itemSize" width="250" height="370"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="rHq-oF-Zkh" customClass="PhotoCollectionViewCell" customModule="WooShot" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="370"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="250" height="370"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="girl4" translatesAutoresizingMaskIntoConstraints="NO" id="Mqs-TL-h2a">
+                                                            <rect key="frame" x="0.0" y="60" width="250" height="250"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Laura" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zk4-Pw-w7J" customClass="CornerRadiusLabel" customModule="WooShot" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="250" height="60"/>
+                                                            <color key="backgroundColor" white="1" alpha="0.54000000000000004" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="60" id="PRh-Ax-p2J"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="12"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="YES"/>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="YES"/>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="NO"/>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="NO"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIW-Me-LEn" customClass="CornerRadiusButton" customModule="WooShot" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="310" width="250" height="60"/>
+                                                            <color key="backgroundColor" red="0.7725490196" green="0.066666666669999999" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="60" id="aMh-Rp-YEc"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Share a drink" image="drink"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="12"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="YES"/>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </button>
+                                                    </subviews>
+                                                </view>
+                                                <color key="backgroundColor" red="0.019607843140000001" green="0.050980392159999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="Mqs-TL-h2a" firstAttribute="top" secondItem="zk4-Pw-w7J" secondAttribute="bottom" id="D7O-jE-3aD"/>
+                                                    <constraint firstAttribute="trailing" secondItem="lIW-Me-LEn" secondAttribute="trailing" id="QMx-Rf-N2P"/>
+                                                    <constraint firstItem="Mqs-TL-h2a" firstAttribute="leading" secondItem="rHq-oF-Zkh" secondAttribute="leading" id="Urh-bQ-IKx"/>
+                                                    <constraint firstItem="zk4-Pw-w7J" firstAttribute="leading" secondItem="rHq-oF-Zkh" secondAttribute="leading" id="VrQ-1d-Y1h"/>
+                                                    <constraint firstItem="zk4-Pw-w7J" firstAttribute="top" secondItem="rHq-oF-Zkh" secondAttribute="top" id="YP9-vq-h2n"/>
+                                                    <constraint firstItem="lIW-Me-LEn" firstAttribute="top" secondItem="Mqs-TL-h2a" secondAttribute="bottom" id="coZ-AA-WgW"/>
+                                                    <constraint firstItem="lIW-Me-LEn" firstAttribute="leading" secondItem="rHq-oF-Zkh" secondAttribute="leading" id="exq-ja-1p3"/>
+                                                    <constraint firstAttribute="bottom" secondItem="lIW-Me-LEn" secondAttribute="bottom" id="s5t-Mh-hUa"/>
+                                                    <constraint firstAttribute="trailing" secondItem="zk4-Pw-w7J" secondAttribute="trailing" id="sVI-Wi-Har"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Mqs-TL-h2a" secondAttribute="trailing" id="vVt-ms-T8y"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="image" destination="Mqs-TL-h2a" id="03N-it-Op2"/>
+                                                    <outlet property="name" destination="zk4-Pw-w7J" id="pMO-Yf-L61"/>
+                                                    <outlet property="shareButton" destination="lIW-Me-LEn" id="m6H-qd-sgH"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="ELj-Gb-twL" id="zaH-CJ-WEI"/>
+                                            <outlet property="delegate" destination="ELj-Gb-twL" id="Hzo-eb-Re9"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="l9K-wb-m6L" secondAttribute="trailing" id="AKW-5O-IxI"/>
+                                    <constraint firstItem="l9K-wb-m6L" firstAttribute="leading" secondItem="TUf-9l-RHF" secondAttribute="leading" id="L3h-Q7-uK5"/>
+                                    <constraint firstItem="l9K-wb-m6L" firstAttribute="centerY" secondItem="TUf-9l-RHF" secondAttribute="centerY" id="QJJ-cn-2ym"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="La Dune" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3v-oE-Q1U" customClass="CornerRadiusLabel" customModule="WooShot" customModuleProvider="target">
+                                <rect key="frame" x="62.5" y="28" width="250" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="0.54000000000000004" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="BD6-SF-QSi"/>
+                                    <constraint firstAttribute="width" constant="250" id="ogU-sb-tfU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="13"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.019607843140000001" green="0.050980392159999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="TUf-9l-RHF" firstAttribute="leading" secondItem="kGW-os-ccn" secondAttribute="leading" id="7cU-Az-mYl"/>
+                            <constraint firstAttribute="trailing" secondItem="TUf-9l-RHF" secondAttribute="trailing" id="MgV-qV-oaw"/>
+                            <constraint firstItem="h3v-oE-Q1U" firstAttribute="centerX" secondItem="kGW-os-ccn" secondAttribute="centerX" id="ST9-af-Xbb"/>
+                            <constraint firstItem="h3v-oE-Q1U" firstAttribute="top" secondItem="Uud-df-HKV" secondAttribute="bottom" constant="8" id="e4g-4Z-1ez"/>
+                            <constraint firstItem="TUf-9l-RHF" firstAttribute="top" secondItem="h3v-oE-Q1U" secondAttribute="bottom" constant="8" id="mRS-at-8gY"/>
+                            <constraint firstItem="VeH-E4-9Vt" firstAttribute="top" secondItem="TUf-9l-RHF" secondAttribute="bottom" id="rt2-Fz-3Zd"/>
+                        </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="collectionView" destination="l9K-wb-m6L" id="x2J-1C-t8q"/>
+                        <outlet property="currentPlaceLabel" destination="h3v-oE-Q1U" id="k8e-4X-gnC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C7n-Py-V9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2297" y="504"/>
+            <point key="canvasLocation" x="2296.5" y="503.5"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="vc5-50-Tix">
@@ -1384,8 +1515,10 @@ Préalablement à toute utilisation l’Utilisateur devra reconnaître expressé
         </scene>
     </scenes>
     <resources>
+        <image name="drink" width="20" height="20"/>
         <image name="fb" width="20" height="20"/>
         <image name="female" width="100" height="100"/>
+        <image name="girl4" width="1142" height="1411"/>
         <image name="logo" width="250" height="174"/>
         <image name="male" width="100" height="100"/>
         <image name="maps" width="100" height="100"/>
@@ -1399,10 +1532,10 @@ Préalablement à toute utilisation l’Utilisateur devra reconnaître expressé
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="igT-ze-Ilp"/>
-        <segue reference="Rq2-er-SaI"/>
         <segue reference="anI-vn-ctl"/>
-        <segue reference="UjL-iY-1cM"/>
+        <segue reference="Rq2-er-SaI"/>
+        <segue reference="igT-ze-Ilp"/>
+        <segue reference="qgg-d4-ETm"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.7725490196" green="0.066666666669999999" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

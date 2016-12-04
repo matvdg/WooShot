@@ -29,6 +29,10 @@ extension UIImage
         return roundedImage!
     }
     
+    func getSquaredImage() -> UIImage {
+        return self.cropToSquare().resizeImage()
+    }
+    
     private func cropToSquare() -> UIImage {
         
         let contextImage: UIImage = UIImage(cgImage: self.cgImage!)

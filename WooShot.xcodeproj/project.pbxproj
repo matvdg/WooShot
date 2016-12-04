@@ -32,6 +32,8 @@
 		F69FEF321D83054A003EEFA2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69FEF311D83054A003EEFA2 /* HomeViewController.swift */; };
 		F6A0D6ED1DABA93B00927920 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A0D6EC1DABA93B00927920 /* MainViewController.swift */; };
 		F6A2D8FE1DF435B7006EBC13 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A2D8FD1DF435B7006EBC13 /* PageViewController.swift */; };
+		F6A2D9001DF45A62006EBC13 /* CornerRadiusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A2D8FF1DF45A62006EBC13 /* CornerRadiusLabel.swift */; };
+		F6A2D9021DF45A71006EBC13 /* CornerRadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A2D9011DF45A71006EBC13 /* CornerRadiusButton.swift */; };
 		F6A75B031DBA7204008A65EF /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A75B021DBA7204008A65EF /* UserManager.swift */; };
 		F6A75B071DBA74A7008A65EF /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A75B061DBA74A7008A65EF /* Provider.swift */; };
 		F6B469181DB79B5D00D0AF7A /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B469171DB79B5D00D0AF7A /* HeaderTableViewCell.swift */; };
@@ -80,6 +82,8 @@
 		F69FEF311D83054A003EEFA2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = HomeViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		F6A0D6EC1DABA93B00927920 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F6A2D8FD1DF435B7006EBC13 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		F6A2D8FF1DF45A62006EBC13 /* CornerRadiusLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerRadiusLabel.swift; sourceTree = "<group>"; };
+		F6A2D9011DF45A71006EBC13 /* CornerRadiusButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerRadiusButton.swift; sourceTree = "<group>"; };
 		F6A75B021DBA7204008A65EF /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		F6A75B061DBA74A7008A65EF /* Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		F6B469171DB79B5D00D0AF7A /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
@@ -178,6 +182,8 @@
 				F6DEEF8C1D8FF387003869B5 /* WooShotViewController.swift */,
 				F69A1A291DABEA33003053B8 /* PhotoCollectionViewCell.swift */,
 				F6CCCFAD1DB67DCB00E59BE0 /* RoundButton.swift */,
+				F6A2D8FF1DF45A62006EBC13 /* CornerRadiusLabel.swift */,
+				F6A2D9011DF45A71006EBC13 /* CornerRadiusButton.swift */,
 				F6CCCFAF1DB6905D00E59BE0 /* AppleMusicButton.swift */,
 				F61F5E4B1DB6754700901228 /* RoundedImageView.swift */,
 				F6B469171DB79B5D00D0AF7A /* HeaderTableViewCell.swift */,
@@ -432,6 +438,8 @@
 				F6503D941DF41C4E0051EFFC /* Database.swift in Sources */,
 				F66911041D2DDF060000A447 /* LogInViewController.swift in Sources */,
 				F6B469181DB79B5D00D0AF7A /* HeaderTableViewCell.swift in Sources */,
+				F6A2D9001DF45A62006EBC13 /* CornerRadiusLabel.swift in Sources */,
+				F6A2D9021DF45A71006EBC13 /* CornerRadiusButton.swift in Sources */,
 				F6E9DD221DF4278600ADEDC8 /* UIViewController + Alert.swift in Sources */,
 				F69A1A2A1DABEA33003053B8 /* PhotoCollectionViewCell.swift in Sources */,
 				F6A0D6ED1DABA93B00927920 /* MainViewController.swift in Sources */,

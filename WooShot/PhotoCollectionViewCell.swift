@@ -14,4 +14,6 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var name: UILabel!
     
+    @IBOutlet weak var shareButton: CornerRadiusButton!
+    
 }
