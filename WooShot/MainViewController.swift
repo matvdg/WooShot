@@ -8,42 +8,44 @@
 
 import UIKit
 
+enum Section: Int {
+    case maps = 0
+    case main = 1
+    case profile = 2
+}
+
 class MainViewController: UIViewController  {
 
    
     @IBOutlet weak var maps: UIImageView!
     @IBOutlet weak var main: UIImageView!
     @IBOutlet weak var profile: UIImageView!
-    @IBOutlet weak var mapsVC: UIView!
-    @IBOutlet weak var profileVC: UIView!
-    @IBOutlet weak var photoVC: UIView!
+    @IBOutlet weak var container: UIView!
     
-    
-    enum section {
-        case maps
-        case main
-        case profile
+    var pageVC: PageViewController? {
+        return self.childViewControllers.flatMap {$0 as? PageViewController}.first
     }
     
     
+    var currentSection = Section.maps {
+        didSet {
+            self.pageVC?.currentSection = currentSection
+        }
+    }
     
-    var currentSection = section.maps
     let scale: CGFloat = 0.7
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.displaySection(section: currentSection)
     }
     
     
-    private func displaySection(section: section) {
+    private func displaySection(section: Section) {
         switch section {
         case .maps:
-            self.profileVC.isHidden = true
-            self.mapsVC.alpha = 0
-            self.mapsVC.isHidden = false
             self.currentSection = .maps
             UIView.animate(withDuration: 0.25, animations: {
-                self.mapsVC.alpha = 1
                 self.main.alpha = 0.3
                 self.maps.alpha = 1
                 self.profile.alpha = 0.3
@@ -53,23 +55,17 @@ class MainViewController: UIViewController  {
             })
 
         case .profile:
-            self.mapsVC.isHidden = true
-            self.profileVC.alpha = 0
-            self.profileVC.isHidden = false
             self.currentSection = .profile
             UIView.animate(withDuration: 0.25, animations: {
                 self.main.alpha = 0.3
                 self.maps.alpha = 0.3
                 self.profile.alpha = 1
-                self.profileVC.alpha = 1
                 self.maps.transform = CGAffineTransform(scaleX: self.scale, y: self.scale)
                 self.main.transform = CGAffineTransform(scaleX: self.scale, y: self.scale)
                 self.profile.transform = CGAffineTransform(scaleX: 1, y: 1)
             })
         case .main:
             self.currentSection = .main
-            self.mapsVC.isHidden = true
-            self.profileVC.isHidden = true
             UIView.animate(withDuration: 0.25, animations: {
                 self.main.alpha = 1
                 self.maps.alpha = 0.3
