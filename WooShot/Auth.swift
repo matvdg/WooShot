@@ -12,7 +12,7 @@ import FacebookCore
 
 class Auth {
     
-    let uid = FIRAuth.auth()?.currentUser?.providerID
+    let uid = FIRAuth.auth()?.currentUser?.uid
     
     func facebookLogin(token: AccessToken, callback: @escaping (_ user: FIRUser? , _ error: Error?) -> ()) {
         
