@@ -10,7 +10,7 @@ import UIKit
 
 class ImageManager {
     
-    let qualityCompression: CGFloat = 0
+    let qualityCompression: CGFloat = 1
    
     func upload(image: UIImage, callback: @escaping (String?) -> ()) {
         

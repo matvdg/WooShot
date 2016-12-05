@@ -22,9 +22,12 @@ class Storage {
         let imageRef = storageRef.child("images/\(id).jpg")
         print(imageRef)
         
+        // Create file metadata including the content type
+        let metadata = FIRStorageMetadata()
+        metadata.contentType = "image/jpeg"
         
         // Upload the file
-        imageRef.put(data, metadata: nil) { metadata, error in
+        imageRef.put(data, metadata: metadata) { metadata, error in
             if let err = error {
                 // Uh-oh, an error occurred!
                 callback(err.localizedDescription)
@@ -32,6 +35,7 @@ class Storage {
                 callback(nil)
             }
         }
+        
     }
     
     func downloadProfilePic(callback: @escaping (String?, Data?) -> () )  {
