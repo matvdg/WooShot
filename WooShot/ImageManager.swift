@@ -2,51 +2,39 @@
 //  ImageManager.swift
 //  WooShot
 //
-//  Created by Mathieu Vandeginste on 21/10/2016.
+//  Created by Mathieu Vandeginste on 05/12/2016.
 //  Copyright © 2016 WooShot. All rights reserved.
 //
-
 
 import UIKit
 
 class ImageManager {
     
-    let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-	
-    
-    func saveImage(imageUrl: String, image: UIImage){
-        let imagePath = path + "/images/"
-        try? FileManager.default.createDirectory(atPath: imagePath, withIntermediateDirectories: false, attributes: nil)
-        let data = UIImagePNGRepresentation(image)
-        FileManager.default.createFile(atPath: imagePath + imageUrl, contents: data, attributes: nil)
+    let qualityCompression: CGFloat = 0
+   
+    func upload(image: UIImage, callback: @escaping (String?) -> ()) {
+        
+        guard let imageData = UIImageJPEGRepresentation(image.getSquaredImage(), qualityCompression) else {
+            print("error in file \(#file), line \(#line)")
+            return
+        }
+        Provider.getStorage().uploadProfilePic(data: imageData) { (err) in
+            if let error = err {
+                callback(error)
+            } else {
+                callback(nil)
+            }
+        }
     }
     
-    func loadImage(imageUrl: String) -> UIImage? {
-        let imagePath = path + "/images/" + imageUrl
-        let data = FileManager.default.contents(atPath: imagePath)
-        guard let imageData = data else {
-            print("couldn't load data at this path: \(imagePath)")
-            return nil
+    func download(callback: @escaping (String?, UIImage?) -> ()) {
+        Provider.getStorage().downloadProfilePic { (err, data) in
+            if let error = err {
+                callback(error, nil)
+            } else {
+                let image = UIImage(data: data!)
+                callback(nil, image)
+            }
         }
-        let image = UIImage(data: imageData)
-        guard let imageLoaded = image else {
-            print("couldn't cast data into image")
-            return nil
-        }
-        return imageLoaded
     }
-
-	
-	func removeFile(imageUrl: String){
-		
-		let imagePath = path + "/images/" + imageUrl
-		do {
-            try FileManager.default.removeItem(atPath: imagePath)
-        } catch {
-            print("couldn't delete the file \(imagePath)")
-        }
-		
-	}
-    
-    
 }

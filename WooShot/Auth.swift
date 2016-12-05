@@ -12,7 +12,9 @@ import FacebookCore
 
 class Auth {
     
-    func facebookConnect(token: AccessToken, callback: @escaping (_ user: FIRUser? , _ error: Error?) -> ()) {
+    let uid = FIRAuth.auth()?.currentUser?.providerID
+    
+    func facebookLogin(token: AccessToken, callback: @escaping (_ user: FIRUser? , _ error: Error?) -> ()) {
         
         let credential = FIRFacebookAuthProvider.credential(withAccessToken: token.authenticationToken)
         
@@ -22,8 +24,34 @@ class Auth {
         
     }
     
-    func emailConnect() {
+    func emailLogin() {
         
+    
     }
+    
+    func logout(callback: (_ error: Error?)-> ()) {
+        do {
+            try FIRAuth.auth()?.signOut()
+            callback(nil)
+        } catch {
+            callback(error)
+        }
+    }
+    
+    func signOff(callback: @escaping (_ error: Error?)-> ()) {
+        let user = FIRAuth.auth()?.currentUser
+        
+        user?.delete { error in
+            if let error = error {
+                // An error happened.
+                callback(error)
+            } else {
+                // Account deleted.
+                callback(nil)
+            }
+        }
+    }
+    
+    
     
 }

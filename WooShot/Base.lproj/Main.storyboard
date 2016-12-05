@@ -769,6 +769,14 @@ Préalablement à toute utilisation l’Utilisateur devra reconnaître expressé
                                             <outletCollection property="gestureRecognizers" destination="L9Y-St-RnY" appends="YES" id="mYm-Lf-uRd"/>
                                         </connections>
                                     </imageView>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="rzb-iV-1Bt">
+                                        <rect key="frame" x="100" y="577" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="PKI-wN-5Bn"/>
+                                            <constraint firstAttribute="width" constant="20" id="evM-CO-Lzq"/>
+                                        </constraints>
+                                        <color key="color" red="0.7725490196" green="0.066666666669999999" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -783,6 +791,7 @@ Préalablement à toute utilisation l’Utilisateur devra reconnaître expressé
                                     <constraint firstItem="KZi-tw-m2r" firstAttribute="leading" secondItem="l94-Q0-KJG" secondAttribute="leading" constant="30" id="G0n-5c-zcX"/>
                                     <constraint firstItem="pph-zc-Pvn" firstAttribute="centerX" secondItem="l94-Q0-KJG" secondAttribute="centerX" id="HRM-lO-EoO"/>
                                     <constraint firstItem="KZi-tw-m2r" firstAttribute="top" secondItem="xJu-Dy-gx9" secondAttribute="bottom" constant="20" id="Kxl-ZU-oMN"/>
+                                    <constraint firstItem="rzb-iV-1Bt" firstAttribute="centerY" secondItem="pph-zc-Pvn" secondAttribute="centerY" id="LYQ-36-yFy"/>
                                     <constraint firstItem="EtF-6u-e7B" firstAttribute="leading" secondItem="l94-Q0-KJG" secondAttribute="leading" constant="30" id="MMS-NI-z1a"/>
                                     <constraint firstItem="xJu-Dy-gx9" firstAttribute="top" secondItem="l94-Q0-KJG" secondAttribute="top" constant="38" id="MoO-z4-ruw"/>
                                     <constraint firstItem="EtF-6u-e7B" firstAttribute="top" secondItem="KZi-tw-m2r" secondAttribute="bottom" constant="30" id="QkF-Pn-XHg"/>
@@ -795,6 +804,7 @@ Préalablement à toute utilisation l’Utilisateur devra reconnaître expressé
                                     <constraint firstItem="WeP-b5-c1u" firstAttribute="centerX" secondItem="ZYP-u3-V3v" secondAttribute="centerX" id="ksh-wb-7lV"/>
                                     <constraint firstItem="SQh-fA-Pi8" firstAttribute="centerX" secondItem="l94-Q0-KJG" secondAttribute="centerX" id="n3p-ze-V3F"/>
                                     <constraint firstItem="qvS-zR-lnd" firstAttribute="centerX" secondItem="xIu-fL-P9q" secondAttribute="centerX" id="nzE-4G-HG9"/>
+                                    <constraint firstItem="pph-zc-Pvn" firstAttribute="leading" secondItem="rzb-iV-1Bt" secondAttribute="trailing" constant="-32.5" id="p7K-bx-Amf"/>
                                     <constraint firstAttribute="trailing" secondItem="SQh-fA-Pi8" secondAttribute="trailing" constant="100" id="pGX-dJ-tvu"/>
                                     <constraint firstAttribute="trailing" secondItem="ZYP-u3-V3v" secondAttribute="trailing" constant="30" id="pch-8G-Lj3"/>
                                     <constraint firstItem="dfK-j9-5Y9" firstAttribute="centerX" secondItem="l94-Q0-KJG" secondAttribute="centerX" id="td3-og-69d"/>
@@ -816,6 +826,7 @@ Préalablement à toute utilisation l’Utilisateur devra reconnaître expressé
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="activitySpin" destination="rzb-iV-1Bt" id="Jd5-63-llx"/>
                         <outlet property="elements" destination="l94-Q0-KJG" id="eyn-Zz-QsA"/>
                         <outlet property="femaleButton" destination="GEt-ei-gnb" id="I7D-Cj-02j"/>
                         <outlet property="femaleLabel" destination="55h-iG-tW8" id="eLQ-7J-Trl"/>

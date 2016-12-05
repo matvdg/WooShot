@@ -49,7 +49,7 @@ class HomeViewController: WooShotViewController {
             case .cancelled:
                 print("User cancelled login.")
             case .success(_, _, let accessToken):
-                Provider.getAuth().facebookConnect(token: accessToken, callback: { (user, error) in
+                Provider.getAuth().facebookLogin(token: accessToken, callback: { (user, error) in
                     //dd
                 })
             }

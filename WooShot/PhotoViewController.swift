@@ -11,14 +11,14 @@ import UIKit
 class PhotoViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var demo = [
-        User(displayName: "Julie", imageUrl: "girl1"),
-        User(displayName: "Lola", imageUrl: "girl2"),
-        User(displayName: "Aurélia", imageUrl: "girl3"),
-        User(displayName: "Alicia", imageUrl: "girl4"),
-        User(displayName: "Candice", imageUrl: "girl5"),
-        User(displayName: "Soraya", imageUrl: "girl6"),
-        User(displayName: "Mélissa", imageUrl: "girl7"),
-        User(displayName: "Clara", imageUrl: "girl8")
+        User(displayName: "Julie"),
+        User(displayName: "Lola"),
+        User(displayName: "Aurélia"),
+        User(displayName: "Alicia"),
+        User(displayName: "Candice"),
+        User(displayName: "Soraya"),
+        User(displayName: "Mélissa"),
+        User(displayName: "Clara")
     ]
 
     @IBOutlet weak var currentPlaceLabel: CornerRadiusLabel!
@@ -29,8 +29,6 @@ class PhotoViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         //adding swipe gestures to the collection view
         let swipeLeft = UISwipeGestureRecognizer()
         swipeLeft.direction = .left
@@ -60,9 +58,10 @@ class PhotoViewController: UIViewController, UICollectionViewDelegate, UICollect
             cell.isHidden = true
         } else {
             cell.isHidden = false
-            let imageUrl = demo[indexPath.row - 1].imageUrl
             let name = demo[indexPath.row - 1].displayName
-            cell.image.image = UIImage(named: imageUrl)?.getSquaredImage()
+            let random: Int = Int(arc4random() % 8 + 1)
+            let imageName = "girl\(random)"
+            cell.image.image = UIImage(named: imageName)?.getSquaredImage()
             cell.name.text = name
             cell.shareButton.tag = indexPath.row - 1
             cell.shareButton.addTarget(self, action: #selector(didTouchShare), for: .touchUpInside)

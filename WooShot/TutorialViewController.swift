@@ -20,6 +20,7 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
     private var imageSet = false
     
     
+    @IBOutlet weak var activitySpin: UIActivityIndicatorView!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var nextButton: UIButton!
@@ -244,16 +245,22 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
     }
     
     private func uploadDataAndSegue() {
-        let imageUrl = "\(self.displayName).png"
-        Provider.getImageManager().saveImage(imageUrl: imageUrl , image: self.profileImage.image!.rotatedCopy)
-        Provider.getUserManager().setCurrentUser(displayName: self.displayName, isMale: self.isMale!, lovesMen: self.lovesMen, lovesWomen: self.lovesWomen, imageUrl: imageUrl)
-        performSegue(withIdentifier: "launchApp", sender: self)
+        self.activitySpin.startAnimating()
+        Provider.getImageManager().upload(image: self.profileImage.image!, callback: { (err) in
+            self.activitySpin.stopAnimating()
+            if let error = err {
+                self.presentErrorAlertViewController(message: error)
+            } else {
+                Provider.getUserManager().setCurrentUser(displayName: self.displayName, isMale: self.isMale!, lovesMen: self.lovesMen, lovesWomen: self.lovesWomen)
+                self.performSegue(withIdentifier: "launchApp", sender: self)
+            }
+        })
     }
     
     private func selectSex(isMale: Bool) {
         nextButtonBottom.isHidden = false
         if step == 1 {
-            if isMale { //touched men button
+            if isMale { //touched men buttons
                 self.isMale = true
                 maleButton.alpha = 1
                 maleLabel.alpha = 1

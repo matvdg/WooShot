@@ -14,7 +14,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     private let imagePicker = UIImagePickerController()
     private let headerHeight: CGFloat = 44
     private let footerHeight: CGFloat = 21
-    private let imageManager = Provider.getImageManager()
     private let userManager = Provider.getUserManager()
     private var displayName = ""
     private var imageUrl = ""
@@ -64,18 +63,26 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             print("fatal error: no current user")
             return
         }
-        self.imageUrl = user.imageUrl
         self.displayName = user.displayName
         self.isMale = user.isMale
         self.lovesWomen = user.lovesFemale
         self.lovesMen = user.lovesMale
-        self.profileImage.image = imageManager.loadImage(imageUrl: self.imageUrl)
+        
+        Provider.getImageManager().download { (err, image) in
+            if let error = err {
+                self.presentErrorAlertViewController(message: error)
+            } else {
+                self.profileImage.image = image
+            }
+        }
+
     }
     
     //UIImagePickerControllerDelegate methods
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         profileImage.image = chosenImage
+        
         dismiss(animated:true, completion: nil)
     }
 
@@ -260,17 +267,29 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     private func logout() {
-        let root = self.view.window!.rootViewController!
-        root.dismiss(animated: false, completion: {
-            if let navVC = root as? UINavigationController {
-                navVC.popToRootViewController(animated: true)
+        Provider.getAuth().logout { (error) in
+            if let err = error {
+                self.presentErrorAlertViewController(message: err.localizedDescription)
+            } else {
+                let root = self.view.window!.rootViewController!
+                root.dismiss(animated: false, completion: {
+                    if let navVC = root as? UINavigationController {
+                        navVC.popToRootViewController(animated: true)
+                    }
+                })
             }
-        })
+        }
     }
     
     private func signoff() {
-        print("do signing off stuff...")
-        logout()
+        Provider.getAuth().signOff { (error) in
+            if let err = error {
+                self.presentErrorAlertViewController(message: err.localizedDescription)
+            } else {
+                self.logout()
+            }
+        }
+        
     }
     
     func didTapEditNameButton() {

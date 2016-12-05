@@ -10,7 +10,6 @@
 		E2A473B78477C65F0BDD78AC /* Pods_WooShot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E831C570B5335D99E41F960 /* Pods_WooShot.framework */; };
 		F614AC801D82BE2500CFEDFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F614AC7F1D82BE2500CFEDFD /* GoogleService-Info.plist */; };
 		F61F5E4C1DB6754700901228 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F5E4B1DB6754700901228 /* RoundedImageView.swift */; };
-		F6280DAC1DBAA2190026368D /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6280DAB1DBAA2190026368D /* ImageManager.swift */; };
 		F62C04C31DBB68440029D6AE /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C04C21DBB68440029D6AE /* ChatManager.swift */; };
 		F62C04C51DBB684A0029D6AE /* PlaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C04C41DBB684A0029D6AE /* PlaceManager.swift */; };
 		F62C04C81DBB6AA80029D6AE /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C04C71DBB6AA80029D6AE /* ChatViewController.swift */; };
@@ -48,16 +47,16 @@
 		F6F060FC1D2DA1E400063049 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6F060FA1D2DA1E400063049 /* Main.storyboard */; };
 		F6F060FE1D2DA1E400063049 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6F060FD1D2DA1E400063049 /* Assets.xcassets */; };
 		F6F061011D2DA1E400063049 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6F060FF1D2DA1E400063049 /* LaunchScreen.storyboard */; };
+		F6F6F43B1DF55EEE004783F7 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F6F43A1DF55EEE004783F7 /* ImageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3E831C570B5335D99E41F960 /* Pods_WooShot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WooShot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6373FC3B49F7FF93A5A494C5 /* Pods-WooShot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WooShot.release.xcconfig"; path = "Pods/Target Support Files/Pods-WooShot/Pods-WooShot.release.xcconfig"; sourceTree = "<group>"; };
 		928E7D41511CBF25DD144CC2 /* Pods-WooShot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WooShot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WooShot/Pods-WooShot.debug.xcconfig"; sourceTree = "<group>"; };
-		F614AC7F1D82BE2500CFEDFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F614AC7F1D82BE2500CFEDFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F614AC9F1D82C18E00CFEDFD /* WooShot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WooShot.entitlements; sourceTree = "<group>"; };
 		F61F5E4B1DB6754700901228 /* RoundedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
-		F6280DAB1DBAA2190026368D /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		F62C04C21DBB68440029D6AE /* ChatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
 		F62C04C41DBB684A0029D6AE /* PlaceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PlaceManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		F62C04C71DBB6AA80029D6AE /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ChatViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -101,6 +100,7 @@
 		F6F060FB1D2DA1E400063049 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F6F060FD1D2DA1E400063049 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6F061001D2DA1E400063049 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F6F6F43A1DF55EEE004783F7 /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,8 +137,8 @@
 			children = (
 				F62C04C21DBB68440029D6AE /* ChatManager.swift */,
 				F62C04C41DBB684A0029D6AE /* PlaceManager.swift */,
-				F6280DAB1DBAA2190026368D /* ImageManager.swift */,
 				F6A75B021DBA7204008A65EF /* UserManager.swift */,
+				F6F6F43A1DF55EEE004783F7 /* ImageManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -194,6 +194,7 @@
 		F6503D8E1DF41A570051EFFC /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
+				F614AC7F1D82BE2500CFEDFD /* GoogleService-Info.plist */,
 				F6503D8F1DF41AA50051EFFC /* Auth.swift */,
 				F6503D911DF41C2E0051EFFC /* RemoteConfig.swift */,
 				F6503D931DF41C4E0051EFFC /* Database.swift */,
@@ -252,7 +253,6 @@
 		F6F060EA1D2DA1E400063049 = {
 			isa = PBXGroup;
 			children = (
-				F614AC7F1D82BE2500CFEDFD /* GoogleService-Info.plist */,
 				F6F060F51D2DA1E400063049 /* WooShot */,
 				F6D0D2D41D2DCB5D00E7E25C /* Supporting Files */,
 				F6F060F41D2DA1E400063049 /* Products */,
@@ -434,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F61F5E4C1DB6754700901228 /* RoundedImageView.swift in Sources */,
+				F6F6F43B1DF55EEE004783F7 /* ImageManager.swift in Sources */,
 				F65242F71DBBA95400982D96 /* Place.swift in Sources */,
 				F6503D941DF41C4E0051EFFC /* Database.swift in Sources */,
 				F66911041D2DDF060000A447 /* LogInViewController.swift in Sources */,
@@ -451,7 +452,6 @@
 				F6894D1D1DA6900E00C8D2E8 /* UIImage + CropImage.swift in Sources */,
 				F6503D901DF41AA50051EFFC /* Auth.swift in Sources */,
 				F6A2D8FE1DF435B7006EBC13 /* PageViewController.swift in Sources */,
-				F6280DAC1DBAA2190026368D /* ImageManager.swift in Sources */,
 				F64B0D9F1DAE700A0045B9FC /* ProfileViewController.swift in Sources */,
 				F6F060F71D2DA1E400063049 /* AppDelegate.swift in Sources */,
 				F69A1A271DABE723003053B8 /* User.swift in Sources */,

@@ -18,8 +18,8 @@ class UserManager {
     }
     
     //setters
-    func setCurrentUser(displayName: String, isMale: Bool, lovesMen: Bool, lovesWomen: Bool, imageUrl: String) {
-        self.currentUser = User(displayName: displayName, imageUrl: imageUrl, isMale: isMale, lovesMale: lovesMen, lovesFemale: lovesWomen)
+    func setCurrentUser(displayName: String, isMale: Bool, lovesMen: Bool, lovesWomen: Bool) {
+        self.currentUser = User(displayName: displayName, isMale: isMale, lovesMale: lovesMen, lovesFemale: lovesWomen)
     }
     
     
@@ -28,12 +28,6 @@ class UserManager {
         if let user = self.currentUser {
             user.displayName = displayName
             print("new name = \(displayName)")
-        }
-    }
-    
-    func updatePhoto(imageUrl: String) {
-        if let user = self.currentUser {
-            user.imageUrl = imageUrl
         }
     }
     
