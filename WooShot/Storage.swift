@@ -18,7 +18,9 @@ class Storage {
         
         guard let id = Provider.getAuth().uid else { return callback("no user authenticated") }
         
-        let imageRef = storageRef.child("images/\(id).png")
+        
+        let imageRef = storageRef.child("images/\(id).jpg")
+        print(imageRef)
         
         
         // Upload the file
@@ -36,7 +38,8 @@ class Storage {
         
         guard let id = Provider.getAuth().uid else { return callback("no user authenticated", nil) }
         
-        let imageRef = storageRef.child("images/\(id).png")
+        let imageRef = storageRef.child("images/\(id).jpg")
+        print(imageRef)
         
         // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
         imageRef.data(withMaxSize: 1 * 1024 * 1024) { (data, error) -> Void in
