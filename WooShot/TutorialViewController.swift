@@ -245,13 +245,13 @@ class TutorialViewController: WooShotViewController, UITextFieldDelegate, UIImag
     }
     
     private func uploadDataAndSegue() {
+        // TODO upload user info
         self.activitySpin.startAnimating()
         Provider.getImageManager().upload(image: self.profileImage.image!, callback: { (err) in
             self.activitySpin.stopAnimating()
             if let error = err {
                 self.presentErrorAlertViewController(message: error)
             } else {
-                Provider.getUserManager().setCurrentUser(displayName: self.displayName, isMale: self.isMale!, lovesMen: self.lovesMen, lovesWomen: self.lovesWomen)
                 self.performSegue(withIdentifier: "launchApp", sender: self)
             }
         })

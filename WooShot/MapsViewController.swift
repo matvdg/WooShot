@@ -12,7 +12,6 @@ import MapKit
 class MapsViewController: UIViewController {
     
     
-    var placeManager = Provider.getPlaceManager()
     var places = [Place]()
     var currentPlace: Place?
     var userLocation: CLLocation?

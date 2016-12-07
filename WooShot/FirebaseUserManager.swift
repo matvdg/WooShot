@@ -10,9 +10,52 @@ import Foundation
 import FirebaseAuth
 import FacebookCore
 
-class Auth {
+
+class FirebaseUserManager: UserProtocol {
     
-    let uid = FIRAuth.auth()?.currentUser?.uid
+    private var currentUser: User?
+    
+    var uid: String {
+        return FIRAuth.auth()!.currentUser!.uid
+    }
+    
+    func getCurrentUser() -> User? {
+        return currentUser
+    }
+    
+    //setters
+    func setCurrentUser(displayName: String, isMale: Bool, lovesMen: Bool, lovesWomen: Bool) {
+        self.currentUser = User(displayName: displayName, isMale: isMale, lovesMale: lovesMen, lovesFemale: lovesWomen)
+    }
+    
+    
+    
+    func updateDisplayName(displayName: String) {
+        if let user = self.currentUser {
+            user.displayName = displayName
+            print("new name = \(displayName)")
+        }
+    }
+    
+    func updateSex(isMale: Bool) {
+        if let user = self.currentUser {
+            user.isMale = isMale
+        }
+    }
+    
+    func updatePrefMale(lovesMen: Bool) {
+        if let user = self.currentUser {
+            user.lovesMale = lovesMen
+        }
+    }
+    
+    func updatePrefFemale(lovesWomen: Bool) {
+        if let user = self.currentUser {
+            user.lovesFemale = lovesWomen
+        }
+    }
+
+    
     
     func facebookLogin(token: AccessToken, callback: @escaping (_ user: FIRUser? , _ error: Error?) -> ()) {
         

@@ -59,14 +59,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     private func loadCurrentUserInfos() {
-        guard let user = userManager.getCurrentUser() else {
-            print("fatal error: no current user")
-            return
-        }
-        self.displayName = user.displayName
-        self.isMale = user.isMale
-        self.lovesWomen = user.lovesFemale
-        self.lovesMen = user.lovesMale
+        
+//        self.displayName = user.displayName
+//        self.isMale = user.isMale
+//        self.lovesWomen = user.lovesFemale
+//        self.lovesMen = user.lovesMale
         
         Provider.getImageManager().download { (err, image) in
             if let error = err {
@@ -219,12 +216,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             if indexPath.row == 0 {
                 if cell!.accessoryType == .none {
                     isMale = true
-                    userManager.updateSex(isMale: isMale)
+                    //userManager.updateSex(isMale: isMale)
                 }
             } else {
                 if cell!.accessoryType == .none {
                     isMale = false
-                    userManager.updateSex(isMale: isMale)
+                    //userManager.updateSex(isMale: isMale)
                 }
             }
             tableView.reloadData()
@@ -235,7 +232,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 } else {
                     lovesMen = false
                 }
-                userManager.updatePrefMale(lovesMen: lovesMen)
+                //userManager.updatePrefMale(lovesMen: lovesMen)
             } else {
                 
                 if cell!.accessoryType == .none {
@@ -243,7 +240,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 } else {
                     lovesWomen = false
                 }
-                userManager.updatePrefFemale(lovesWomen: lovesWomen)
+                //userManager.updatePrefFemale(lovesWomen: lovesWomen)
             }
             tableView.reloadData()
         case 3: //other
@@ -267,28 +264,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     private func logout() {
-        Provider.getAuth().logout { (error) in
-            if let err = error {
-                self.presentErrorAlertViewController(message: err.localizedDescription)
-            } else {
-                let root = self.view.window!.rootViewController!
-                root.dismiss(animated: false, completion: {
-                    if let navVC = root as? UINavigationController {
-                        navVC.popToRootViewController(animated: true)
-                    }
-                })
-            }
-        }
     }
     
     private func signoff() {
-        Provider.getAuth().signOff { (error) in
-            if let err = error {
-                self.presentErrorAlertViewController(message: err.localizedDescription)
-            } else {
-                self.logout()
-            }
-        }
         
     }
     
@@ -323,7 +301,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         guard let name = textField.text else { return }
         guard name != "" else { return }
         self.displayName = name
-        userManager.updateDisplayName(displayName: self.displayName)
     }
     
 
